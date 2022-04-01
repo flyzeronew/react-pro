@@ -1,0 +1,108 @@
+/*共用文字*/
+.font15_1,.font15_1 a{color:#ac005b; font-size:15px;}
+.font16_1,.font16_1 a{color:#3e5b94; font-size:16px; font-weight:bolder;}.font16_1 a:hover{color:#fff;}
+.font16_2,.font16_2 a{color:#b81b26; font-size:16px; font-weight:bolder;}.font16_2 a:hover{color:#fff;}
+.font16_3,.font16_3 a{color:#ffffff; font-size:16px !important;}
+.font16_4,.font16_4 a{color:#666666; font-size:16px;}
+.font18_1,.font18_1 a{color:#000000; font-size:18px;}.font18_1 a:hover{color:#ac005b;}
+.font18_2,.font18_2 a{color:#FFFFFF; font-size:18px;}
+.font18_3,.font18_3 a{color:#5c5c5c; font-size:18px; font-weight:bolder;}
+.font18_4,.font18_4 a{color:#888888; font-size:18px;}.font18_4 a:hover{color:#fc7f04;}
+.font20_1,.font20_1 a{color:#ffffff; font-size:20px;}
+.font20_2,.font20_2 a{color:#666666; font-size:20px;}
+.font24_1,.font24_1 a{color:#000000; font-size:24px;}.font24_1 a:hover{color:#ac005b;}
+.font24_2,.font24_2 a{color:#000000; font-size:24px;}.font24_2 a:hover{color:#ac005b;}
+.font26_1,.font26_1 a{color:#ffffff; font-size:26px;}
+.font30_1,.font30_1 a{color:#ac005b; font-size:30px;font-weight:bolder;}
+
+
+/*共用文字ed*/
+
+/*間隔高度*/
+.height5px{height:5px;}
+.height10px{height:10px;}.height20px{height:20px;}.height30px{height:30px;}
+.height40px{height:40px;}.height50px{height:50px;}.height60px{height:60px;}
+/*間隔高度ed*/
+
+
+/*共用廣告*/
+.ad_frame01,.ad_frame01 img{width:100%; height:100%;}
+.ad_970x90_pc{width:970px; height:90px; margin: 0 auto;}
+.ad_300x600_pc{width:300px; height:600px; margin: 0 auto;}
+.ad_300x250_pc,.ad_300x250_mo{width:300px; height:250px; margin: 0 auto;}
+.ad_300x250_mo{display:none;}
+.ad_320x100_mo{width:320px; height:100px; margin: 0 auto;display:none;}
+
+/*共用廣告ed*/
+
+/*共用物件*/
+
+/*抬頭線條*/
+.line01{width:100%;height:3px;background-color:#ac005b;}
+/*抬頭線條ed*/
+
+/*more*/
+.more01{}.more01 a{display:block;padding:5px 15px;background-color:#FFF;border:#ac005b 1px solid;border-radius:30px;transition:0.3s;}
+.more01 a:hover{background-color:#ac005b;border-radius:30px;color:#FFF;}
+/*more ed*/
+
+/*按鈕*/
+
+/*社群*/
+.community_btn{}
+.community_btn ul{}
+.community_btn li{display:inline-block; margin:8px 0px 0px 8px; background-color:#ffffff;border-radius:30px;}
+.community_btn li:nth-child(1){border:#3e5b94 2px solid; background-image:url(../images/icon_facebook.svg);background-repeat:no-repeat; background-size:13px; background-position:10px center;}
+.community_btn li:nth-child(2){border:#b81b26 2px solid; background-image:url(../images/icon_youtube.svg);background-repeat:no-repeat; background-size:25px; background-position:10px center;}
+.community_btn li:nth-child(1) a{display:block;padding:5px 20px 5px 30px !important;transition:0.3s; }
+.community_btn li:nth-child(2) a{display:block;padding:5px 20px 5px 40px !important;transition:0.3s; }
+.community_btn li:nth-child(1):hover{ background-color:#3e5b94;background-image:url(../images/icon_facebook-o.svg);}
+.community_btn li:nth-child(2):hover{ background-color:#b81b26;background-image:url(../images/icon_youtube-o.svg);}
+/*社群ed*/
+
+.button01 a{ cursor:pointer;display:block; padding:5px 30px;background-color:#f5f5f5; border-radius:5px; box-shadow:#bebebe 0px 5px 0px;transition:0.3s;}
+.button01 a:hover,.button01 a.active{background-color:#db0277; box-shadow:#ac005b 0px 5px 0px; color:#fff;}
+/*按鈕 ed*/
+
+
+
+/*共用物件ed*/
+ 
+/* RWD響應式在下面----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 1024px){
+/*間隔高度*/
+.height20px,.height30px,.height40px,.height50px,.height60px{height:10px;}
+.height40px{height:20px;}
+/*間隔高度ed*/	
+/*共用廣告*/
+.ad_970x90_pc{display:none;}
+.ad_320x100_mo{display:block;}
+.ad_300x250_mo{display:block}
+/*共用廣告ed*/
+}
+
+@media (max-width: 850px){
+/*共用文字*/
+.font24_1,.font24_1 a{font-size:18px;}
+/*共用文字ed*/	
+}
+@media (max-width: 640px){
+/*共用文字*/
+.font30_1,.font30_1 a{font-size:24px;}
+.font20_2,.font20_2 a{font-size:16px;}
+/*共用文字ed*/	
+}
+@media (max-width: 414px){}
+@media (max-width: 375px){}
+@media (max-width: 320px){
+/*共用文字*/
+.font16_4,.font16_4 a{font-size:15px;}
+.font20_2,.font20_2 a{font-size:15px;}
+.font24_1,.font24_1 a{font-size:16px;}
+/*共用文字ed*/		
+/*共用廣告*/
+.ad_320x100_mo{width:100%;}
+/*共用廣告ed*/
+
+}
+/* RWD響應式在下面----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ed*/	
