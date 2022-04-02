@@ -20,8 +20,7 @@ function App() {
       <header>
         <Header/>
       </header>
-      <main> 
-      <div className="test">aaa</div>       
+      <main>       
       </main>
       <footer>
         
