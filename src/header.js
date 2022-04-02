@@ -1,17 +1,15 @@
 import React from "react";
 import arrow from './images/icon_label01.svg';
 
-class Header extends React.Component {
+class Header extends React.Component {    
   render () {
     let imgtag = 'img';
     return (
-        <div className="program_header">
+        <div className="program_header">                   
             <div className="program_header_box">
-        
                 <div class="program_header_box_hamburger">
-                    <div class="program_header_box_hamburger1">
-                        <ul class="font20_1">
-
+                    <div className="program_header_box_hamburger1">
+                        <ul className="font20_1">
                             <li><a href="#">商品資訊</a></li>
                             <li><a href="#">完整影音</a></li>
                             <li><a href="#">達人推薦</a></li>
@@ -23,8 +21,8 @@ class Header extends React.Component {
                             <a href="#">更多＋</a>
 
                         
-                            <div class="program_header_box_hamburger1_child">
-                            <ul class="font16_3">
+                            <div className="program_header_box_hamburger1_child">
+                            <ul className="font16_3">
                             <li><a href="#">子項目選單</a></li>
                             <li><a href="#">子項目選單</a></li>
                             <li><a href="#">子項目選單</a></li>
@@ -39,12 +37,12 @@ class Header extends React.Component {
                         </ul>
                     </div>
 
-                    <div class="program_header_box_hamburger_community">
+                    <div className="program_header_box_hamburger_community">
                 
-                        <div class="community_btn">
+                        <div className="community_btn">
                             <ul>
-                                <li class="font16_1"><a href="#">加入</a></li>
-                                <li class="font16_2"><a href="#">訂閱</a></li>
+                                <li className="font16_1"><a href="#">加入</a></li>
+                                <li className="font16_2"><a href="#">訂閱</a></li>
                             </ul>
                         </div>
                 
