@@ -17,9 +17,8 @@ p{text-align:left;}
 .program_container {margin: 0 auto;padding: 0;position: relative;}
 
 /* 按鈕列總包------------------------------------------------------------------------------------------------------ */
-
 /* 按鈕列底 */
-.program_header {background-color:#ac005b;}
+.program_header{background-color:#ac005b;}
 /* 按鈕列底 ed*/
 
 /* 共用框 */
@@ -27,6 +26,7 @@ p{text-align:left;}
 .program_ad_box{margin-bottom:0px;}
 .program_header_box{margin-bottom:0px;overflow:visible;height:51px;position:relative;}
 .program_content3{width:100%;background-color:#f3f2f2;}
+
 /* 共用框 ed */
 
 /* 手機版漢堡 */
