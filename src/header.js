@@ -1,13 +1,19 @@
 import React from "react";
 import arrow from './images/icon_label01.svg';
 
-class Header extends React.Component {    
-  render () {
-    let imgtag = 'img';
-    return (
+class Header extends React.Component {   
+    constructor(props) {
+        super(props);
+        this.state = {
+            imgtag : 'img',
+            adimg : 'ad_img'
+        };
+      } 
+  render () {    
+    return (        
         <div className="program_header">                   
             <div className="program_header_box">
-                <div class="program_header_box_hamburger">
+                <div className="program_header_box_hamburger">
                     <div className="program_header_box_hamburger1">
                         <ul className="font20_1">
                             <li><a href="#">商品資訊</a></li>
@@ -72,16 +78,16 @@ class Header extends React.Component {
                     </ul>
                 </div>
                 
-                <div class="program_header_community">
-                    <div class="community_btn">
+                <div className="program_header_community">
+                    <div className="community_btn">
                         <ul>
-                            <li class="font16_1"><a href="#">加入</a></li>
-                            <li class="font16_2"><a href="#">訂閱</a></li>
+                            <li className="font16_1"><a href="#">加入</a></li>
+                            <li className="font16_2"><a href="#">訂閱</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="program_header_arraw"><img src={arrow} alt={imgtag} /></div>
+                <div class="program_header_arraw"><img src={arrow} alt={this.props.img} /></div>
             </div>
         </div>
     );
