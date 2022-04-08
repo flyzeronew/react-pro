@@ -98,7 +98,14 @@ p{text-align:left;}
 .program_content_main_kv_arrawL,.program_content_main_kv_arrawR{width:45px;position:absolute;top:40%; z-index:1; cursor:pointer;}
 .program_content_main_kv_arrawL{left:10px;}
 .program_content_main_kv_arrawR{right:10px;}
+
+.program_content_main_kv .slick-next:before,.program_content_main_kv .slick-prev:before {
+    content:'';
+}
+.program_content_main_kv .slick-prev{width: 45px;height: 45px;background-image:url(../images/arraw01-L.svg);}
+.program_content_main_kv .slick-next{width: 45px;height: 45px;background-image:url(../images/arraw01-R.svg);}
 /* 箭頭ed */
+
 
 /* 主視覺 kv ed */
 

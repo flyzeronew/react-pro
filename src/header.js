@@ -1,5 +1,8 @@
 import React from "react";
 import arrow from './images/icon_label01.svg';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class Header extends React.Component {   
     constructor(props) {
@@ -11,7 +14,7 @@ class Header extends React.Component {
       } 
   render () {    
     return (        
-        <div className="program_header">                   
+        <div className="program_header">             
             <div className="program_header_box">
                 <div className="program_header_box_hamburger">
                     <div className="program_header_box_hamburger1">
