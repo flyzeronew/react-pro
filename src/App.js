@@ -3,8 +3,6 @@ import {Helmet} from "react-helmet";
 import Myjs from './Myjs';
 import ad_top from './images/ad970x90.jpg';
 import ad_top_m from './images/ad320x100.jpg';
-import arraw01_l from './images/arraw01-L.svg';
-import arraw01_r from './images/arraw01-R.svg';
 import kv_img from './images/kv850x470.jpg';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -29,12 +27,15 @@ function Arrow_r(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", right:'10px',zIndex:1}}
+      style={{ ...style,right:'10px',zIndex:1}}
       onClick={onClick}
     />
   );
 }
-
+let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwomanqueenwomanqueen&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
+function Iframe(props) {
+  return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
+}
 let img = 'img';
 let ad_img = 'ad_img';
 var settings = {
@@ -92,9 +93,7 @@ function App() {
         <div className="height20px"></div>
         <div className="program_content">
           <div className="program_content_main">
-            <div className="program_content_main_kv"> 
-              {/* <div className="program_content_main_kv_arrawL"><img src={arraw01_l} alt={img}/></div>
-              <div className="program_content_main_kv_arrawR"><img src={arraw01_r} alt={img}/></div> */}              
+            <div className="program_content_main_kv">          
        
                   <Slider {...settings}>
                     <li>
@@ -114,6 +113,13 @@ function App() {
                     </Slider>
                
                
+            </div>
+          </div>
+
+          <div className="program_content_right">
+            <div className="program_content_right_time"><p className="font16_3">鎖定:TVBS每週一至週五 18:00~18:30</p></div>
+            <div className="program_content_right_fb_box">
+            <Iframe iframe={iframe_fb}/>
             </div>
           </div>
         </div>
