@@ -4,6 +4,7 @@ import Myjs from './Myjs';
 import ad_top from './images/ad970x90.jpg';
 import ad_top_m from './images/ad320x100.jpg';
 import ad_right from './images/ad300x600.jpg';
+import ad_right2 from './images/ad300x250.jpg';
 
 import kv_img from './images/kv850x470.jpg';
 import Slider from "react-slick";
@@ -119,13 +120,68 @@ function App() {
           </div>
 
           <div className="program_content_right">
+
             <div className="program_content_right_time"><p className="font16_3">鎖定:TVBS每週一至週五 18:00~18:30</p></div>
+            
             <div className="program_content_right_fb_box">
               <Iframe iframe={iframe_fb}/>
             </div>
+
             <div className="program_content_right_ad_box">
               <div className="ad_frame01">
                 <a href="#"><img src={ad_right} alt={ad_img}/></a>                
+              </div>
+            </div>
+
+            <div className="program_content_right_activity_box">
+              <div className="program_content_main_information_titel">
+                <p className="program_content_main_information_titel_p font30_1">好康活動</p>
+                <div className="program_content_main_information_titel_more">
+                  <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                </div>
+                <div className="line01"></div>
+              </div>
+            </div>
+
+            <div className="height10px"></div>
+
+            <div className="program_content_right_activity">
+              <ul>
+                <li>
+                  <a href="#">
+                    <div className="program_content_right_activity_img">
+                        <div className="mask"></div>
+                        <img src={kv_img} alt={ad_img} />
+                      </div>
+                    <p className="font18_1">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="program_content_right_activity_img">
+                        <div className="mask"></div>
+                        <img src={kv_img} alt={ad_img} />
+                      </div>
+                    <p className="font18_1">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="program_content_right_activity_img">
+                        <div className="mask"></div>
+                        <img src={kv_img} alt={ad_img} />
+                      </div>
+                    <p className="font18_1">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="height10px"></div>
+
+            <div className="program_content_right_ad_box">
+              <div className="ad_frame01">
+                <a href="#"><img src={ad_right2} alt={ad_img}/></a>                
               </div>
             </div>
           </div>
