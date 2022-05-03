@@ -3,6 +3,8 @@ import {Helmet} from "react-helmet";
 import Myjs from './Myjs';
 import ad_top from './images/ad970x90.jpg';
 import ad_top_m from './images/ad320x100.jpg';
+import ad_right from './images/ad300x600.jpg';
+
 import kv_img from './images/kv850x470.jpg';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -119,7 +121,12 @@ function App() {
           <div className="program_content_right">
             <div className="program_content_right_time"><p className="font16_3">鎖定:TVBS每週一至週五 18:00~18:30</p></div>
             <div className="program_content_right_fb_box">
-            <Iframe iframe={iframe_fb}/>
+              <Iframe iframe={iframe_fb}/>
+            </div>
+            <div className="program_content_right_ad_box">
+              <div className="ad_frame01">
+                <a href="#"><img src={ad_right} alt={ad_img}/></a>                
+              </div>
             </div>
           </div>
         </div>
