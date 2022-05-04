@@ -108,9 +108,25 @@ p{text-align:left;}
 
 
 /* 主視覺 kv ed */
-
+.mask{
+	width:100%;height:100%;background-color: rgba(0,0,0,0);
+	position:absolute;z-index:1;transition: 0.3s;
+	
+}
 /* 網頁內容*/
 .program_content_main_information{ margin-bottom:20px;}
+.program_content_main_information_img{position:relative;}
+.program_content_main_information li a .mask{
+	width:100%;height:100%;background-color: rgba(0,0,0,0);
+	position:absolute;z-index:1;transition: 0.3s;
+	
+}
+.program_content_main_information li a:hover .mask{
+	background-color: rgba(0,0,0,0.4);transition: 0.3s;
+}
+.program_content_main_information li a:hover p{
+	color: #ac005b;
+}
 .program_content_main_information_box{text-align:center;}
 .program_content_main_information p{text-align:left;}
 /*抬頭*/
@@ -137,11 +153,12 @@ p{text-align:left;}
 
 /*3欄*/
 .program_content_main_information2 li{width:382px; margin-right:20px; height:310px; display:inline-block;overflow:hidden;margin-bottom:5px;}
-.program_content_main_information2_img{height:210px;overflow:hidden;margin-bottom:5px;}
-.program_content_main_information2 li p{}
+.program_content_main_information2_img{height:210px;overflow:hidden;margin-bottom:5px;position: relative;}
+.program_content_main_information2 li a:hover p{color: #ac005b;}
+.program_content_main_information2 li a:hover .mask{background-color: rgba(0,0,0,0.4);transition: 0.3s;}
 /*3欄ed*/
 
-.program_content_main_information li:nth-child(even),.program_content_main_information2 li:last-child{margin-right:0px;}
+.program_content_main_information li:nth-child(even),.program_content_main_information2 li:nth-child(3n){margin-right:0px;}
 
 
 /*內容共用*/

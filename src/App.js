@@ -113,12 +113,9 @@ function App() {
                     <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
                     <img src={kv_img} alt={ad_img}/>
                     </li>
-                    </Slider>
-               
-               
-            </div>
+                    </Slider>               
+            </div>            
           </div>
-
           <div className="program_content_right">
 
             <div className="program_content_right_time"><p className="font16_3">鎖定:TVBS每週一至週五 18:00~18:30</p></div>
@@ -127,63 +124,78 @@ function App() {
               <Iframe iframe={iframe_fb}/>
             </div>
 
-            <div className="program_content_right_ad_box">
-              <div className="ad_frame01">
-                <a href="#"><img src={ad_right} alt={ad_img}/></a>                
-              </div>
-            </div>
-
-            <div className="program_content_right_activity_box">
+          </div>
+        </div>
+         <div className="program_content2">
+          <div className="program_content2_main2">
+            
               <div className="program_content_main_information_titel">
-                <p className="program_content_main_information_titel_p font30_1">好康活動</p>
-                <div className="program_content_main_information_titel_more">
-                  <div className="more01"><a className="font15_1" href="#">MORE</a></div>
-                </div>
-                <div className="line01"></div>
+                  <p className="program_content_main_information_titel_p font30_1">精彩內容</p>
+                  <div className="program_content_main_information_titel_more">
+                    <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                  </div>
+                  <div className="line01"></div>
               </div>
-            </div>
+              
+              <div className="height20px"></div>
 
-            <div className="height10px"></div>
-
-            <div className="program_content_right_activity">
-              <ul>
+              <div className="program_content_main_information2">
                 <li>
                   <a href="#">
-                    <div className="program_content_right_activity_img">
+                    <div className="program_content_main_information2_img">
                         <div className="mask"></div>
-                        <img src={kv_img} alt={ad_img} />
-                      </div>
-                    <p className="font18_1">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</p>
+                        <img src={kv_img} alt={img}/>
+                    </div>
+                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <div className="program_content_right_activity_img">
+                    <div className="program_content_main_information2_img">
                         <div className="mask"></div>
-                        <img src={kv_img} alt={ad_img} />
-                      </div>
-                    <p className="font18_1">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</p>
+                        <img src={kv_img} alt={img}/>
+                    </div>
+                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <div className="program_content_right_activity_img">
+                    <div className="program_content_main_information2_img">
                         <div className="mask"></div>
-                        <img src={kv_img} alt={ad_img} />
-                      </div>
-                    <p className="font18_1">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</p>
+                        <img src={kv_img} alt={img}/>
+                    </div>
+                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
                   </a>
                 </li>
-              </ul>
-            </div>
 
-            <div className="height10px"></div>
-
-            <div className="program_content_right_ad_box">
-              <div className="ad_frame01">
-                <a href="#"><img src={ad_right2} alt={ad_img}/></a>                
+                <li>
+                  <a href="#">
+                    <div className="program_content_main_information2_img">
+                        <div className="mask"></div>
+                        <img src={kv_img} alt={img}/>
+                    </div>
+                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="program_content_main_information2_img">
+                        <div className="mask"></div>
+                        <img src={kv_img} alt={img}/>
+                    </div>
+                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div className="program_content_main_information2_img">
+                        <div className="mask"></div>
+                        <img src={kv_img} alt={img}/>
+                    </div>
+                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
+                  </a>
+                </li>
               </div>
-            </div>
           </div>
         </div>
       </main>
