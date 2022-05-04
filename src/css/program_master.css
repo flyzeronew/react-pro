@@ -91,7 +91,10 @@ p{text-align:left;}
 .program_content_main_kv,.program_content_main_kv li{height:470px;}
 .program_content_main_kv ul{}
 .program_content_main_kv li{position:relative;}
-.program_content_main_kv_writing{width:100%;bottom:0; position:absolute;background-color:rgba(241,241,241,0.9); box-shadow:rgba(0,0,0,0.5) 0px 0px 50px;}
+.program_content_main_kv li a:hover .mask{
+	background-color: rgba(0,0,0,0.4);transition: 0.3s;
+}
+.program_content_main_kv_writing{width:100%;bottom:0; position:absolute;background-color:rgba(241,241,241,0.9); box-shadow:rgba(0,0,0,0.5) 0px 0px 50px;z-index: 2;}
 .program_content_main_kv_writing p{ padding:15px;}
 
 /* 箭頭 */

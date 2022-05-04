@@ -99,21 +99,36 @@ function App() {
             <div className="program_content_main_kv">          
        
                   <Slider {...settings}>
-                    <li>
-                    <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
-                    <img src={kv_img} alt={ad_img}/>
-                    </li>
+                      <li>
+                        <a href="##">
+                          <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
+                          <div className="img">
+                            <div className="mask"></div>
+                            <img src={kv_img} alt={ad_img}/>
+                          </div>
+                        </a>
+                      </li>
 
-                    <li>
-                    <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
-                    <img src={kv_img} alt={ad_img}/>
-                    </li>
+                      <li>
+                        <a href="##">
+                          <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
+                          <div className="img">
+                            <div className="mask"></div>
+                            <img src={kv_img} alt={ad_img}/>
+                          </div>
+                        </a>
+                      </li>
 
-                    <li>
-                    <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
-                    <img src={kv_img} alt={ad_img}/>
-                    </li>
-                    </Slider>               
+                      <li>
+                        <a href="##">
+                          <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
+                          <div className="img">
+                            <div className="mask"></div>
+                            <img src={kv_img} alt={ad_img}/>
+                          </div>
+                        </a>
+                      </li>
+                  </Slider>               
             </div>            
           </div>
           <div className="program_content_right">
