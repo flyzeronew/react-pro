@@ -213,6 +213,63 @@ function App() {
               </div>
           </div>
         </div>
+        <div className="program_content">
+            <div className="program_content_main">
+                <div className="program_content_main_information_box">
+                    <div className="program_content_main_information_titel">
+                        <p className="program_content_main_information_titel_p font30_1">節目資訊</p>
+                        <div className="program_content_main_information_titel_more">
+                            <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                        </div>
+                        <div className="line01"></div>
+                    </div>
+
+                    <div className="height20px"></div>
+
+                  <div className="program_content_main_information_one">
+                      <div className="program_content_main_information_one_img1"><img src={kv_img} alt={img}/></div>
+                      <div className="program_content_main_information_one_p1">
+                        <p className="font24_2">TVBS 56頻道 / 女人我最大</p>
+                        <p className="font18_3">主持人:藍心湄</p>
+                        <p className="font18_3">每週一至週五 晚間6點</p>
+                        <p className="font18_4">
+                          ★ 高畫質完整版【<a href="#">線上看</a>】<br/>
+                          ★ <a href="#">http://goo.gl/2C0hKj</a><br/>
+                          ★ 快來訂閱【<a href="#">TVBS 女人我最大</a>】官方頻道！
+                        </p>
+                      </div>
+                  </div>
+
+                </div>
+            </div>
+
+            <div className="program_content_right">   
+                <div className="program_content_main_information_titel">
+                  <p className="program_content_main_information_titel_p font30_1">相關新聞</p>
+                  <div className="program_content_main_information_titel_more">
+                  <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                  </div>
+                  <div className="line01"></div>
+                </div>
+
+                <div className="height20px"></div>
+
+                <div className="program_content_right_activity2">
+                  <ul>
+                    <li>
+                      <div className="program_content_right_activity_img2"><img src={kv_img} alt={img}/></div>
+                      <p className="font18_1"><a href="#">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</a></p>
+                    </li>
+
+                    <li>
+                      <div className="program_content_right_activity_img2"><img src={kv_img} alt={img}/></div>
+                      <p className="font18_1"><a href="#">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</a></p>
+                    </li>
+
+                  </ul>
+                </div>
+            </div>
+        </div>
       </main>
       <footer>
         
