@@ -1,6 +1,7 @@
 import Header from './header';
 import {Helmet} from "react-helmet";
 import Myjs from './Myjs';
+import gotop from './images/gotop.png';
 import ad_top from './images/ad970x90.jpg';
 import ad_top_m from './images/ad320x100.jpg';
 import ad_right from './images/ad300x600.jpg';
@@ -71,7 +72,10 @@ var settings = {
 function App() { 
 
   return (
-    <div className="program_container">      
+    <div className="program_container">
+     <div id="back">
+        <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
+     </div>
       <Myjs/>
       <Helmet>
           <meta charSet="utf-8" />

@@ -1,7 +1,47 @@
 import React from "react";
 import $ from 'jquery';
 export default class Myjs  extends React.Component {
-    componentDidMount(){
+    componentDidMount(){       
+        $(window).scroll(function(){
+            object_scroll();	
+         });
+        function object_scroll(){
+        if($(window).scrollTop()>50){
+            $('#back').fadeIn(300);
+        }else{
+            $('#back').hide();
+        }
+       }
+        /*gotop*/
+        var $el = $(scrollableElement('html', 'body'));
+        var speed = 550;
+        var $iconTOP = $('#back-img1');
+        $($iconTOP).click(function(event) {
+            event.preventDefault();
+            $el.stop().animate({ scrollTop: -50 }, speed);
+        });
+        // 透過scrollTop檢測可用元素的函數// http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links#update4
+        function scrollableElement() {
+            var i, len, el, $el, scrollable;
+            for (i = 0, len = arguments.length; i < len; i++) {
+                el = arguments[i];
+                $el = $(el);
+                if ($el.scrollTop() > 0) {
+
+                    return el;
+                } else {
+                    $el.scrollTop(1);
+                    scrollable = $el.scrollTop() > 0;
+                    $el.scrollTop(0);
+                    if (scrollable) {
+                        return el;
+                    }
+                }
+            }
+            return [];
+        }
+        /*gotop ed*/
+
         $('.program_content2_main_button li').each(function(i){
             $('.program_content2_main .program_content2_main_button li').eq(i).click(function(){
             $('.program_content2_main .program_content2_main_button li').children('.button01 a').removeClass('active');
