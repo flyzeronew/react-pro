@@ -6,7 +6,6 @@ import ad_top from './images/ad970x90.jpg';
 import ad_top_m from './images/ad320x100.jpg';
 import ad_right from './images/ad300x600.jpg';
 import ad_right2 from './images/ad300x250.jpg';
-
 import kv_img from './images/kv850x470.jpg';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -40,6 +39,7 @@ let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href=htt
 function Iframe(props) {
   return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
 }
+
 let img = 'img';
 let ad_img = 'ad_img';
 var settings = {
@@ -69,14 +69,16 @@ var settings = {
     }
   ]
 };
+
 function App() { 
 
   return (
     <div className="program_container">
+
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
-      <Myjs/>
+      <Myjs />
       <Helmet>
           <meta charSet="utf-8" />
           <title>節目公版</title>
@@ -84,7 +86,7 @@ function App() {
           <meta name="keywords" content="關鍵字" />
           <meta name="description" content="導言"/>                
        </Helmet> 
-      <header img={img}>
+      <header>
         <Header/>
       </header>
       <main>      

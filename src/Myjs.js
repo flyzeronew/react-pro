@@ -1,10 +1,23 @@
 import React from "react";
 import $ from 'jquery';
+// import exjson from './js/ex.json';
+// let jsarr=exjson.menu_above;
+
 export default class Myjs  extends React.Component {
-    componentDidMount(){       
-        $(window).scroll(function(){
-            object_scroll();	
-         });
+    constructor(props) {
+        super(props);
+        this.state = {
+        demo:[],
+        };
+    }
+    componentDidMount(){
+        fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/news/chatbot_newest/%E4%BA%BA%E6%B0%A3%E6%96%B0%E8%81%9E')
+        .then(res => res.json())
+        .then(json => this.setState({
+            demo:json.article,
+        }));
+
+        $(window).scroll(function(){object_scroll(); });
         function object_scroll(){
         if($(window).scrollTop()>50){
             $('#back').fadeIn(300);
@@ -87,6 +100,18 @@ export default class Myjs  extends React.Component {
             });
       
       }    
-    render(){return (<div className="myjs"></div>)}
+    render(){return (
+    <div className="myjs">
+
+        {
+            this.state.demo.length == 0
+            ? 'Loading newsletter...'
+            : this.state.demo.map(key => (
+            <li key={key.news_id}>
+            <a href={key.url}>{key.news_title}</a>
+            </li>
+            ))
+        }
+    </div>)}
 }
 
