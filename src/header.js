@@ -30,39 +30,30 @@ class Header extends React.Component {
                 <div className="program_header_box_hamburger">
                     <div className="program_header_box_hamburger1">
                         <ul className="font20_1">
-                            <li><a href="#">商品資訊</a></li>
-                            <li><a href="#">完整影音</a></li>
-                            <li><a href="#">達人推薦</a></li>
-                            <li><a href="#">達人會客室</a></li>
-                            <li><a href="#">試用報告</a></li>
-                            <li><a href="#">雜誌訂閱</a></li>
-
-                            <li>
-                            <a href="#">更多＋</a>
-
-                        
-                            <div className="program_header_box_hamburger1_child">
-                            <ul className="font16_3">
-                            <li><a href="#">子項目選單</a></li>
-                            <li><a href="#">子項目選單</a></li>
-                            <li><a href="#">子項目選單</a></li>
-                            <li><a href="#">子項目選單</a></li>
-                            <li><a href="#">子項目選單</a></li>
-                            <li><a href="#">子項目選單</a></li>
-                            </ul>
-                            </div>
-                 
-                            </li>
-
+                            {
+                                this.state.menu.length == 0
+                                ? 'Loading menu...'
+                                : this.state.menu.map(key => (
+                                <li key={key.id}>
+                                <a href={key.url}>{key.title}</a>
+                                </li>
+                                ))
+                            }
                         </ul>
                     </div>
 
                     <div className="program_header_box_hamburger_community">
-                
+
                         <div className="community_btn">
                             <ul>
-                                <li className="font16_1"><a href="#">加入</a></li>
-                                <li className="font16_2"><a href="#">訂閱</a></li>
+                                {
+                                this.state.fb=="" ? "" :                            
+                                <li className="font16_1"><a href={this.state.fb}>訂閱</a></li>
+                                }
+                                {
+                                this.state.yt=="" ? "" :                            
+                                <li className="font16_2"><a href={this.state.yt}>訂閱</a></li>
+                                }
                             </ul>
                         </div>
                 
@@ -80,8 +71,8 @@ class Header extends React.Component {
                             <li key={key.id}>
                             <a href={key.url}>{key.title}</a>
                             </li>
-                        ))
-                    }
+                            ))
+                        }
                     </ul>
                 </div>
                 
@@ -95,8 +86,7 @@ class Header extends React.Component {
                             {
                               this.state.yt=="" ? "" :                            
                               <li className="font16_2"><a href={this.state.yt}>訂閱</a></li>
-                            }
-                           
+                            }                           
                         </ul>
                     </div>
                 </div>
