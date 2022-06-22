@@ -11,7 +11,7 @@ export default class Myjs  extends React.Component {
         };
     }
     componentDidMount(){
-        fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/news/chatbot_newest/%E4%BA%BA%E6%B0%A3%E6%96%B0%E8%81%9E')
+        fetch('https://tvbsapp3.tvbs.com.tw/api3/news/chatbot_newest/最新新聞')
         .then(res => res.json())
         .then(json => this.setState({
             demo:json.article,
