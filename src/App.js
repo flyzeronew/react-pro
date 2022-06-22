@@ -86,7 +86,7 @@ function App() {
           <meta name="keywords" content="關鍵字" />
           <meta name="description" content="導言"/>                
        </Helmet> 
-      <header>
+      <header img={img}>
         <Header/>
       </header>
       <main>      

@@ -1,21 +1,9 @@
 import React from "react";
 import $ from 'jquery';
-// import exjson from './js/ex.json';
-// let jsarr=exjson.menu_above;
 
 export default class Myjs  extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        demo:[],
-        };
-    }
+
     componentDidMount(){
-        fetch('https://tvbsapp3.tvbs.com.tw/api3/news/chatbot_newest/最新新聞')
-        .then(res => res.json())
-        .then(json => this.setState({
-            demo:json.article,
-        }));
 
         $(window).scroll(function(){object_scroll(); });
         function object_scroll(){
@@ -102,16 +90,6 @@ export default class Myjs  extends React.Component {
       }    
     render(){return (
     <div className="myjs">
-
-        {
-            this.state.demo.length == 0
-            ? 'Loading newsletter...'
-            : this.state.demo.map(key => (
-            <li key={key.news_id}>
-            <a href={key.url}>{key.news_title}</a>
-            </li>
-            ))
-        }
     </div>)}
 }
 

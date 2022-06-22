@@ -4,14 +4,25 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-class Header extends React.Component {   
+class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            imgtag : 'img',
-            adimg : 'ad_img'
+          menu:[],
         };
-      } 
+    }
+    componentDidMount(){
+        fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/program_api_f/menubar?id=28')
+        .then(res => res.json())
+        .then(json => this.setState({
+            title:json.program.title,
+            url:json.program.og_url,
+            fb:json.program.facebook,
+            yt:json.program.youtube,        
+            menu:json.data,
+        }));
+    }
+
   render () {    
     return (        
         <div className="program_header">             
@@ -59,33 +70,33 @@ class Header extends React.Component {
                 </div>
 
 
-                <div class="program_header_titel font26_1"><a href="http://woman.tvbs.com.tw/">節目公版</a></div>          
+                <div class="program_header_titel font26_1"><a href={this.state.url}>{this.state.title}</a></div>          
                 <div className="program_header_nav">
                     <ul className="font20_1">
-                        <li><a href="#">商品資訊</a></li>
-                        <li><a href="#">完整影音</a></li>
-                        <li><a href="#">達人推薦</a></li>
-                        <li><a href="#">達人會客室</a></li>
-                        <li><a href="#">試用報告</a></li>
-                        <li><a href="#">雜誌訂閱</a></li>        
-                        <li>
-                            <a href="#">更多＋</a>                    
-                            <div class="program_header_nav_child">
-                                <ul>
-                                    <li className="font16_3"><a href="#">子選單1</a></li>
-                                    <li className="font16_3"><a href="#">子選單2</a></li>
-                                    <li className="font16_3"><a href="#">子選單3</a></li>
-                                </ul>
-                            </div>
-                        </li>  
+                        {
+                            this.state.menu.length == 0
+                            ? 'Loading menu...'
+                            : this.state.menu.map(key => (
+                            <li key={key.id}>
+                            <a href={key.url}>{key.title}</a>
+                            </li>
+                        ))
+                    }
                     </ul>
                 </div>
                 
                 <div className="program_header_community">
                     <div className="community_btn">
-                        <ul>
-                            <li className="font16_1"><a href="#">加入</a></li>
-                            <li className="font16_2"><a href="#">訂閱</a></li>
+                        <ul>                            
+                            {
+                              this.state.fb=="" ? "" :                            
+                              <li className="font16_1"><a href={this.state.fb}>訂閱</a></li>
+                            }
+                            {
+                              this.state.yt=="" ? "" :                            
+                              <li className="font16_2"><a href={this.state.yt}>訂閱</a></li>
+                            }
+                           
                         </ul>
                     </div>
                 </div>
