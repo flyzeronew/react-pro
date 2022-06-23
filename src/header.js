@@ -3,9 +3,7 @@ import arrow from './images/icon_label01.svg';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import queryString from "query-string";
-const parsed = queryString.parse(window.location.search);
-console.log(parsed);
+
 var get=28;
 class Header extends React.Component {
     constructor(props) {
