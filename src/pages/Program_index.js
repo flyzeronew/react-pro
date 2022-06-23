@@ -13,8 +13,10 @@ import './../css/program_article_share.css';
 import queryString from "query-string";
 var parsed = queryString.parse(window.location.search);
 var get_id=parsed.id;
-
-let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwomanqueenwomanqueen&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
+// https://www.facebook.com/tvbsfocusnews
+// https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwomanqueenwomanqueen&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098
+let fb_url="https://www.facebook.com/tvbsfocusnews";
+let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href='+fb_url+'&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
 function Iframe(props) {
   return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
 }
@@ -100,7 +102,7 @@ function Program_index() {
           <div className="program_content_main">
             <div className="program_content_main_kv">          
                     <li>
-                        <a href={cover.url} target="_blank" >
+                        <a href={cover.url} target="_blank" rel="noreferrer" >
                           <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
                           <div className="img">
                             <div className="mask"></div>
