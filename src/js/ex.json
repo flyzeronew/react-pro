@@ -1,0 +1,400 @@
+    {
+       "header":{
+            "logo":{
+                "img":"images/tvbs_logo.png",
+                "url":"https://www.tvbs.com.tw/"
+            },
+            "weather":{
+                "img":"images/header_climate_img01.png",
+                "temperature":"42",
+                "area":"高雄市"
+            },
+            "object":{
+                "img":"images/search-magnifier.svg"
+            }
+    
+        },
+    
+        "menu_above": [
+            {"id":1,"name":"節目表","url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw","meshow":false,"ch1":[]},
+            {"id":2,"name":"影音頻道","url":"##","meshow":false,
+                "ch1":[
+                    {"id":1,"name":"TVBSNEWS","url":"https://news.tvbs.com.tw/"},
+                    {"id":2,"name":"女人我最大","url":"##"},
+                    {"id":3,"name":"上班這黨事","url":"##"},
+                    {"id":4,"name":"戲劇中心","url":"##"},
+                    {"id":5,"name":"女兵日記","url":"##"},
+                    {"id":6,"name":"翻牆記憶","url":"##"},
+                    {"id":7,"name":"酸甜之味","url":"##"},
+                    {"id":8,"name":"再一起、就好","url":"##"},
+                    {"id":9,"name":"遺憾拼圖","url":"##"},
+                    {"id":10,"name":"16個夏天","url":"##"}
+                ]},
+            {"id":3,"name":"基金會","url":"https://tvbsf.tvbs.com.tw/","meshow":false,"ch1":[]},
+            {"id":4,"name":"人才招募","url":"https://www.tvbs.com.tw/careers/","meshow":false,"ch1":[]}
+        ], 
+     
+        "menu_under": [
+            {"id":1,"name":"新聞網","url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw","meshow":false,"btnstyle":true,"ch1":[]},
+            {"id":2,"name":"55新聞台","url":"##","meshow":false,
+                "ch1":[
+                    {"id":1,"name":"一步一腳印發現新台灣","url":"https://new-taiwan.tvbs.com.tw/"},
+                    {"id":2,"name":"中國進行式","url":"##"},
+                    {"id":3,"name":"世界翻轉中","url":"##"},
+                    {"id":4,"name":"當掌聲響起","url":"##"}
+                ]},
+            {"id":3,"name":"42歡樂台","url":"##","meshow":false,"btnstyle":false,
+                "ch1":[
+                    {"id":1,"name":"食尚玩家","url":"https://supertaste.tvbs.com.tw/"},
+                    {"id":2,"name":"女人我最大","url":"##"},
+                    {"id":3,"name":"上班這黨事","url":"##"},
+                    {"id":4,"name":"戲劇中心","url":"##"},
+                    {"id":5,"name":"女兵日記","url":"##"},
+                    {"id":6,"name":"翻牆記憶","url":"##"},
+                    {"id":7,"name":"酸甜之味","url":"##"},
+                    {"id":8,"name":"再一起、就好","url":"##"},
+                    {"id":9,"name":"遺憾拼圖","url":"##"},
+                    {"id":10,"name":"16個夏天","url":"##"}
+                ]},
+            {"id":4,"name":"56TVBS","url":"##","meshow":false,"btnstyle":false,
+                "ch1":[
+                    {"id":1,"name":"健康2.0","url":"https://health.tvbs.com.tw/"},
+                    {"id":2,"name":"Forus全球新聞","url":"##"},
+                    {"id":3,"name":"國民大會","url":"##"},
+                    {"id":4,"name":"看板人物","url":"##"},
+                    {"id":5,"name":"少康戰情室","url":"##"},
+                    {"id":6,"name":"地球黃金線","url":"##"},
+                    {"id":7,"name":"T觀點","url":"##"}
+                ]},
+            {"id":5,"name":"TVBS精采台","url":"https://www.tvbs.com.tw/","meshow":false,"btnstyle":false,"ch1":[]},
+            {"id":6,"name":"TVBS ASIA","url":"https://tvbsf.tvbs.com.tw/","meshow":false,"btnstyle":false,"ch1":[]}
+        ],
+        "newsletter": [
+            {
+            "id":1,
+            "name":"1.超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":2,    
+            "name":"2.朱學恒問高雄勘災情形　韓國瑜凝重回「兩字」",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":3,    
+            "name":"3.破億獻舌吻5分鐘！小薰放話衝《山的那一邊》票房",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            }
+        ],
+        "main_kv": [
+            {
+            "id":1,    
+            "img":"images/pic-test.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":2,  
+            "img":"images/drama_kv880x495.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":3,      
+            "img":"images/drama_kv880x495-2.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            }
+        ],
+        "main_list": [
+            {
+            "id":1,      
+            "name":"1.超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"10分鐘前"
+            },
+            {
+            "id":2,     
+            "name":"2.超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"10分鐘前"
+            },
+            {
+            "id":3,     
+            "name":"3.超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"10分鐘前"
+            },           
+            {
+            "id":4,     
+            "name":"4.超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"10分鐘前"
+            },
+            {
+            "id":5,     
+            "name":"5.超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私超帥男友遭起底！柯P幕僚「學姐」氣回：是我的個人隱私",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"10分鐘前"
+            }
+        ],
+        "program1": [
+            {
+            "id":1,    
+            "img":"images/program_pic01.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":2,  
+            "img":"images/program_pic02.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":3,      
+            "img":"images/program_pic03.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":4,      
+            "img":"images/program_pic04.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":5,      
+            "img":"images/program_pic05.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            }
+            
+        ],
+        "program2": [
+            {
+            "id":1,    
+            "img":"images/program_pic06.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":2,  
+            "img":"images/program_pic07.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":3,      
+            "img":"images/program_pic08.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":4,      
+            "img":"images/program_pic09.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":5,      
+            "img":"images/program_pic10.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            }
+           
+        ],
+      
+        "program3": [
+            {
+            "id":1,    
+            "img":"images/program_pic11.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":2,  
+            "img":"images/program_pic12.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":3,      
+            "img":"images/program_pic13.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":4,      
+            "img":"images/program_pic14.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            },
+            {
+            "id":5,      
+            "img":"images/program_pic15.jpg",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "fb":"#",
+            "yt":"#"
+            }
+            
+        ],
+        "activity": [
+            {
+            "id":1,    
+            "img":"images/activity-pic01.jpg",
+            "txt":"韓國女生皮膚好的原因",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":2,  
+            "img":"images/2020-12-21_135844.jpg",
+            "txt":"食尚玩家活動",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":3,      
+            "img":"images/activity-pic01.jpg",
+            "txt":"韓國女生皮膚好的原因",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            },
+            {
+            "id":4,      
+            "img":"images/2020-12-21_135844.jpg",
+            "txt":"食尚玩家活動",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw"
+            }            
+        ],
+        "activity2": [
+            {
+            "id":1,
+            "txt":"對劉元勛涉及冒用TVBS名義事件之聲明",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"2017/01/19 15:12"
+            },
+            {
+            "id":2,
+            "txt":"中華民國電視頻道促進協會籌備會 公告",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"2017/01/19 15:12"
+            },
+            {
+            "id":3,
+            "txt":"TVBS國際化　與首家AI人工智慧通信社合作VBS國際化　與首家AI人工智慧通信社合作VBS國際化　與首家AI人工智慧通信社合作TVBS國際化　與首家AI人工智慧通信社合作",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-16/taiwan/zh-tw",
+            "time":"2017/01/19 15:12"
+            }           
+        ],
+        "footer_above": [
+            {
+            "id":1,
+            "txt":"55新聞台",
+            "time":"15:00 1500整點新聞"
+            },
+            {
+            "id":2,
+            "txt":"42歡樂台",
+            "time":"15:00 1500整點新聞"
+            },
+            {
+            "id":3,
+            "txt":"46TVBS",
+            "time":"15:00 1500整點新聞"
+            },
+            {
+            "id":4,
+            "txt":"TVBS精采台",
+            "time":"15:00 1500整點新聞"
+            },
+            {
+            "id":5,
+            "txt":"TVBS ASIA",
+            "time":"15:00 1500整點新聞"
+            }               
+        ],
+        "footer_info": [
+            {
+            "id":1,
+            "txt":"公司介紹",
+            "url":"https://www.tvbs.com.tw/ours/company"
+            },
+            {
+            "id":2,
+            "txt":"人才招募",
+            "url":"https://www.tvbs.com.tw/careers/"
+            },
+            {
+            "id":3,
+            "txt":"節目表",
+            "url":"https://schedule.tvbs.com.tw/tvbs/2020-12-21/taiwan/zh-tw"
+            },
+            {
+            "id":4,
+            "txt":"主播專區",
+            "url":"https://www.tvbs.com.tw/anchor"
+            },
+            {
+            "id":5,
+            "txt":"企業動態",
+            "url":"https://news.tvbs.com.tw/inter-news"
+            },
+            {
+            "id":6,
+            "txt":"更正與澄清",
+            "url":"https://news.tvbs.com.tw/clarifications"
+            },
+            {
+            "id":7,
+            "txt":"新聞自律規範",
+            "url":"https://www.tvbs.com.tw/news-rule"
+            },
+            {
+            "id":8,
+            "txt":"個人資料保護",
+            "url":"https://www.tvbs.com.tw/policies/privacy"
+            },
+            {
+            "id":9,
+            "txt":"網站使用協定",
+            "url":"https://www.tvbs.com.tw/policies/terms"
+            },
+            {
+            "id":10,
+            "txt":"版權宣告",
+            "url":"https://www.tvbs.com.tw/policies/copyright"
+            },
+            {
+            "id":11,
+            "txt":"業務服務",
+            "url":"https://www.tvbs.com.tw/ours/advertise"
+            },
+            {
+            "id":12,
+            "txt":"節目版權銷售",
+            "url":"https://www.tvbs.com.tw/copyright"
+            },
+            {
+            "id":13,
+            "txt":"TVBS 頂尖事務所",
+            "url":"https://family.tvbs.com.tw/"
+            }                    
+        ]
+
+        
+        
+        
+        
+        
+           
+    }

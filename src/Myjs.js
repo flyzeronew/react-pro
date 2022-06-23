@@ -5,6 +5,7 @@ export default class Myjs  extends React.Component {
 
     componentDidMount(){
 
+
         $(window).scroll(function(){object_scroll(); });
         function object_scroll(){
         if($(window).scrollTop()>50){
