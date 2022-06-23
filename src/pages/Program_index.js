@@ -13,63 +13,74 @@ import './../css/program_article_share.css';
 import queryString from "query-string";
 var parsed = queryString.parse(window.location.search);
 var get_id=parsed.id;
-// https://www.facebook.com/tvbsfocusnews
-// https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwomanqueenwomanqueen&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098
-let fb_url="https://www.facebook.com/tvbsfocusnews";
-let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href='+fb_url+'&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
-function Iframe(props) {
-  return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
-}
 
 let img = 'img';
 let ad_img = 'ad_img';
 
 function Program_index() {
-
+    const [loading, setLoading] = useState('')
     const [cover, setCover] = useState('')
-    const getDataFromServer = async () => {
-        // 先開起載入指示器
-        // setIsLoading(true)
-        // 模擬和伺服器要資料，先寫死
-        // 注意header資料格式要設定，伺服器才知道是json格式
+    const [social, setSocial] = useState('')
+    // const getDataFromServer = async () => {
+    //     // 先開起載入指示器
+    //     // 注意header資料格式要設定，伺服器才知道是json格式
+       
+    //     const response = await fetch(
+    //       'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + get_id,
+    //       {
+    //         method: 'get',
+    //         headers: new Headers({
+    //           Accept: 'application/json',
+    //           'Content-Type': 'application/json',
+    //         }),
+    //       }
+    //     )
+    //     const coverdata = await response.json()
 
-        const response = await fetch(
-          'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + get_id,
-          {
-            method: 'get',
-            headers: new Headers({
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            }),
-          }
-        )
-        const coverdata = await response.json()
 
-        // 最後設定到狀態中
-        // setOrderDisplay(data)
-        // let arr = []
-        //  arr.push(data)
-        // 因為有好幾個項目，所以要.rows才可以只把rows叫出來
-        // setSuccessdata(data.rows)
-        // setBook_name(data.book_name)
-        // setISBN(data.ISBN)
-        // setBook_pics(data.book_pics)
-        // setNickname(data.nickname)
-        // setMatch_c_sid(data.Match_c_sid)
-        setCover(coverdata.data[0])
+    //     setCover(coverdata.data[0])
     
-        console.log(coverdata)
-      //  console.log(coverdata.data[0].cover_image)
+    //     console.log(coverdata)
         
-        // 3秒後關閉指示器
-        setTimeout(() => {
-          // setIsLoading(false)
-        }, 3000)
-      }
+    //     // 3秒後關閉指示器
+    //     setTimeout(() => {
+    //       // setIsLoading(false)
+    //     }, 3000)
+    //   }
+
+    //多組api fetch
+    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=', "https://tvbsapp.tvbs.com.tw/program_api/social?id=",];
+
+    const getDataFromServer = async () => {
+      setLoading(true);
+      const [result1, result2] = await Promise.all(
+        urls.map((url) => fetch(url+ get_id).then((res) => res.json()))
+     );
+      setLoading(false);
+      setCover(result1.data[0]);
+      setSocial(result2.data[0]);
+      //console.log(result2);
+    };
+
+
+
+
     // 模擬componentDidMount
     useEffect(() => {
         getDataFromServer()
     }, [])
+
+    //fb iframe
+    let fb_url=social.facebook;
+    let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href='+fb_url+'&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
+    function Iframe(props) {
+      return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
+    }
+
+
+
+
+
   return (
     <div className="program_container">
 
