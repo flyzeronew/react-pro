@@ -21,6 +21,8 @@ function Program_index() {
     const [loading, setLoading] = useState('')
     const [cover, setCover] = useState('')
     const [social, setSocial] = useState('')
+    const [time, setTime] = useState('')
+    const [program_info, setProgram_info] = useState('')
     // const getDataFromServer = async () => {
     //     // 先開起載入指示器
     //     // 注意header資料格式要設定，伺服器才知道是json格式
@@ -49,16 +51,18 @@ function Program_index() {
     //   }
 
     //多組api fetch
-    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=', "https://tvbsapp.tvbs.com.tw/program_api/social?id=",];
+    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info"];
 
     const getDataFromServer = async () => {
       setLoading(true);
-      const [result1, result2] = await Promise.all(
-        urls.map((url) => fetch(url+ get_id).then((res) => res.json()))
+      const [result1, result2,result3,result4] = await Promise.all(
+        urls.map((url) => fetch(url+"?id="+ get_id).then((res) => res.json()))
      );
       setLoading(false);
       setCover(result1.data[0]);
       setSocial(result2.data[0]);
+      setTime(result3.data[0]);
+      setProgram_info(result4.data[0]);
       //console.log(result2);
     };
 
@@ -77,7 +81,8 @@ function Program_index() {
       return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
     }
 
-
+    //const program_info_text=program_info.content.innerHTML;
+    const program_info_text= {__html:program_info.content};
 
 
 
@@ -126,7 +131,7 @@ function Program_index() {
           </div>
           <div className="program_content_right">
 
-            <div className="program_content_right_time"><p className="font16_3">鎖定:TVBS每週一至週五 18:00~18:30</p></div>
+            <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
             
             <div className="program_content_right_fb_box">
               <Iframe iframe={iframe_fb}/>
@@ -220,6 +225,12 @@ function Program_index() {
                     <div className="height20px"></div>
 
                   <div className="program_content_main_information_one">
+                      <div className="program_content_main_information_one_img1"><img src={program_info.image} alt={img}/></div>
+                      <div className="program_content_main_information_one_p1" dangerouslySetInnerHTML={{__html: program_info.content}}>
+                      </div>
+                  </div>
+
+                  {/* <div className="program_content_main_information_one">
                       <div className="program_content_main_information_one_img1"><img src={kv_img} alt={img}/></div>
                       <div className="program_content_main_information_one_p1">
                         <p className="font24_2">TVBS 56頻道 / 女人我最大</p>
@@ -231,7 +242,7 @@ function Program_index() {
                           ★ 快來訂閱【<a href="#">TVBS 女人我最大</a>】官方頻道！
                         </p>
                       </div>
-                  </div>
+                  </div> */}
 
                 </div>
             </div>
