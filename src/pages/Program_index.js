@@ -100,7 +100,7 @@ function Program_index() {
           <div className="program_content_main">
             <div className="program_content_main_kv">          
                     <li>
-                        <a href="##">
+                        <a href={cover.url} target="_blank" >
                           <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
                           <div className="img">
                             <div className="mask"></div>
