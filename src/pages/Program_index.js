@@ -5,14 +5,14 @@ import Myjs from './../Myjs';
 import gotop from './../images/gotop.png';
 import ad_top from './../images/ad970x90.jpg';
 import ad_top_m from './../images/ad320x100.jpg';
-// import ad_right from './images/ad300x600.jpg';
-// import ad_right2 from './images/ad300x250.jpg';
 import kv_img from './../images/kv850x470.jpg';
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './../css/program_master.css';
 import './../css/program_article_share.css';
+import queryString from "query-string";
+var parsed = queryString.parse(window.location.search);
+var get_id=parsed.id;
 
 function Arrow_l(props) {
   const { className, style, onClick } = props;
@@ -43,37 +43,10 @@ function Iframe(props) {
 
 let img = 'img';
 let ad_img = 'ad_img';
-var settings = {
-  speed: 500,
-  slidesToShow: 1,
-  infinite:true,
-  prevArrow: <Arrow_l />,
-  nextArrow: <Arrow_r />,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1
-      }
-    }
-  ]
-};
 
 function Program_index() { 
+
     const [cover, setCover] = useState('')
-    const program_id=28
     const getDataFromServer = async () => {
         // 先開起載入指示器
         // setIsLoading(true)
@@ -81,7 +54,7 @@ function Program_index() {
         // 注意header資料格式要設定，伺服器才知道是json格式
         
         const response = await fetch(
-          'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + program_id,
+          'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + get_id,
           {
             method: 'get',
             headers: new Headers({
@@ -131,8 +104,8 @@ function Program_index() {
           <meta name="keywords" content="關鍵字" />
           <meta name="description" content="導言"/>                
        </Helmet> 
-      <header img={img}>
-        <Header/>
+      <header>
+        <Header img={img} get_id={get_id}/>
       </header>
       <main>      
         <div className="height20px"></div>
@@ -158,38 +131,7 @@ function Program_index() {
                           </div>
                         </a>
                     </li>
-                  {/* <Slider {...settings}>
-                      <li>
-                        <a href="##">
-                          <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
-                          <div className="img">
-                            <div className="mask"></div>
-                            <img src={kv_img} alt={ad_img}/>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="##">
-                          <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
-                          <div className="img">
-                            <div className="mask"></div>
-                            <img src={kv_img} alt={ad_img}/>
-                          </div>
-                        </a>
-                      </li>
-
-                      <li>
-                        <a href="##">
-                          <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
-                          <div className="img">
-                            <div className="mask"></div>
-                            <img src={kv_img} alt={ad_img}/>
-                          </div>
-                        </a>
-                      </li>
-                  </Slider>                */}
-            </div>            
+            </div>
           </div>
           <div className="program_content_right">
 

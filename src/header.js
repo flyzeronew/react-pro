@@ -3,10 +3,7 @@ import arrow from './images/icon_label01.svg';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import queryString from "query-string";
-const parsed = queryString.parse(window.location.search);
-console.log(parsed);
-var get=28;
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
@@ -15,7 +12,7 @@ class Header extends React.Component {
         };
     }
     componentDidMount(){
-        fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu?id='+get+'')
+        fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu?id='+this.props.get_id)
         .then(res => res.json())
         .then(json => this.setState({
             title:json.program.title,
@@ -30,7 +27,7 @@ class Header extends React.Component {
 
   render () {    
     return (        
-        <div className="program_header">             
+        <div className="program_header">
             <div className="program_header_box">
                 <div className="program_header_box_hamburger">
                     <div className="program_header_box_hamburger1">
