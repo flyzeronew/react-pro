@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import Header from './../header';
 import {Helmet} from "react-helmet";
 import Myjs from './../Myjs';
@@ -71,7 +72,51 @@ var settings = {
 };
 
 function Program_index() { 
-
+    const [cover, setCover] = useState('')
+    const program_id=28
+    const getDataFromServer = async () => {
+        // 先開起載入指示器
+        // setIsLoading(true)
+        // 模擬和伺服器要資料，先寫死
+        // 注意header資料格式要設定，伺服器才知道是json格式
+        
+        const response = await fetch(
+          'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + program_id,
+          {
+            method: 'get',
+            headers: new Headers({
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            }),
+          }
+        )
+        const coverdata = await response.json()
+    
+        // 最後設定到狀態中
+        // setOrderDisplay(data)
+        // let arr = []
+        //  arr.push(data)
+        // 因為有好幾個項目，所以要.rows才可以只把rows叫出來
+        // setSuccessdata(data.rows)
+        // setBook_name(data.book_name)
+        // setISBN(data.ISBN)
+        // setBook_pics(data.book_pics)
+        // setNickname(data.nickname)
+        // setMatch_c_sid(data.Match_c_sid)
+        setCover(coverdata.data[0])
+    
+        console.log(coverdata)
+      //  console.log(coverdata.data[0].cover_image)
+        
+        // 3秒後關閉指示器
+        setTimeout(() => {
+          // setIsLoading(false)
+        }, 3000)
+      }
+    // 模擬componentDidMount
+    useEffect(() => {
+        getDataFromServer()
+    }, [])
   return (
     <div className="program_container">
 
@@ -103,8 +148,17 @@ function Program_index() {
         <div className="program_content">
           <div className="program_content_main">
             <div className="program_content_main_kv">          
-       
-                  <Slider {...settings}>
+                    <li>
+                        <a href="##">
+                          <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
+                          <div className="img">
+                            <div className="mask"></div>
+                            <img src={cover.cover_image} alt={ad_img}/>
+                            {/* <img src={kv_img} alt={ad_img}/> */}
+                          </div>
+                        </a>
+                    </li>
+                  {/* <Slider {...settings}>
                       <li>
                         <a href="##">
                           <div className="program_content_main_kv_writing"><p className=" font20_2">女人我最大招募女孩軍團囉~ 對時尚有興趣嗎?想與達人老師學習最新的時尚資訊？</p></div>
@@ -134,7 +188,7 @@ function Program_index() {
                           </div>
                         </a>
                       </li>
-                  </Slider>               
+                  </Slider>                */}
             </div>            
           </div>
           <div className="program_content_right">
