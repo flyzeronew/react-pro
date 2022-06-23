@@ -1,6 +1,5 @@
 import React from "react";
 import arrow from './images/icon_label01.svg';
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -18,7 +17,7 @@ class Header extends React.Component {
             title:json.program.title,
             url:json.program.og_url,
             fb:json.program.facebook,
-            yt:json.program.youtube,        
+            yt:json.program.youtube,
             menu:json.data,
         }));
         
