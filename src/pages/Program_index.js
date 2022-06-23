@@ -14,28 +14,6 @@ import queryString from "query-string";
 var parsed = queryString.parse(window.location.search);
 var get_id=parsed.id;
 
-function Arrow_l(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{
-         ...style,left:'10px',zIndex:1,
-        }}
-      onClick={onClick}
-    />
-  );
-}
-function Arrow_r(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style,right:'10px',zIndex:1}}
-      onClick={onClick}
-    />
-  );
-}
 let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwomanqueenwomanqueen&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
 function Iframe(props) {
   return (<div dangerouslySetInnerHTML={ {__html:  props.iframe?props.iframe:""}} />);
@@ -44,7 +22,7 @@ function Iframe(props) {
 let img = 'img';
 let ad_img = 'ad_img';
 
-function Program_index() { 
+function Program_index() {
 
     const [cover, setCover] = useState('')
     const getDataFromServer = async () => {
@@ -52,7 +30,7 @@ function Program_index() {
         // setIsLoading(true)
         // 模擬和伺服器要資料，先寫死
         // 注意header資料格式要設定，伺服器才知道是json格式
-        
+
         const response = await fetch(
           'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + get_id,
           {
@@ -64,7 +42,7 @@ function Program_index() {
           }
         )
         const coverdata = await response.json()
-    
+
         // 最後設定到狀態中
         // setOrderDisplay(data)
         // let arr = []
