@@ -23,6 +23,8 @@ function Program_index() {
     const [social, setSocial] = useState('')
     const [time, setTime] = useState('')
     const [program_info, setProgram_info] = useState('')
+    const [relative_news, setRelative_news] = useState('')
+    const [articles, setArticles] = useState('')
     // const getDataFromServer = async () => {
     //     // 先開起載入指示器
     //     // 注意header資料格式要設定，伺服器才知道是json格式
@@ -51,11 +53,11 @@ function Program_index() {
     //   }
 
     //多組api fetch
-    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info"];
+    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords"];
 
     const getDataFromServer = async () => {
       setLoading(true);
-      const [result1, result2,result3,result4] = await Promise.all(
+      const [result1, result2,result3,result4,result5] = await Promise.all(
         urls.map((url) => fetch(url+"?id="+ get_id).then((res) => res.json()))
      );
       setLoading(false);
@@ -63,7 +65,22 @@ function Program_index() {
       setSocial(result2.data[0]);
       setTime(result3.data[0]);
       setProgram_info(result4.data[0]);
-      //console.log(result2);
+      setRelative_news(result5.data.slice(0,2))
+      //let relative_news_two=relative_news.slice(0,2);
+      //console.log(relative_news_two);
+      //console.log(relative_news);
+    };
+
+    const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list"];
+    const getDataFromServer2 = async () => {
+      setLoading(true);
+      const [result1] = await Promise.all(
+        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=5&page=0").then((res) => res.json()))
+     );
+      setLoading(false);
+      setArticles(result1.data);
+
+      console.log(articles);
     };
 
 
@@ -72,6 +89,7 @@ function Program_index() {
     // 模擬componentDidMount
     useEffect(() => {
         getDataFromServer()
+        getDataFromServer2()
     }, [])
 
     //fb iframe
@@ -153,7 +171,7 @@ function Program_index() {
               <div className="height20px"></div>
 
               <div className="program_content_main_information2">
-                <li>
+                {/* <li>
                   <a href="#">
                     <div className="program_content_main_information2_img">
                         <div className="mask"></div>
@@ -198,7 +216,21 @@ function Program_index() {
                     </div>
                     <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
                   </a>
-                </li>
+                </li> */}
+                {/* 文章url看樣子，可能還要再思考一下路由*/}
+                {Array.from(articles).map((item, index) => (
+                      <li>
+                      <a href={`/reveiew/article/`+item.id}>
+                    <div className="program_content_main_information2_img">
+                        <div className="mask"></div>
+                        <img src={item.cover_image} alt={img}/>
+                    </div>
+                    <p className="font24_1">{item.title}</p>
+                  </a>
+                    </li>
+                    ))}
+
+              {/* 下面這塊差廣告 */}
                 <li>
                   <a href="#">
                     <div className="program_content_main_information2_img">
@@ -260,7 +292,14 @@ function Program_index() {
 
                 <div className="program_content_right_activity2">
                   <ul>
-                    <li>
+
+                    {Array.from(relative_news).map((item, index) => (
+                      <li>
+                      <div className="program_content_right_activity_img2"><img src={item.news_img} alt={img}/></div>
+                      <p className="font18_1"><a href={item.share_url}>{item.news_title}</a></p>
+                    </li>
+                    ))}
+                    {/* <li>
                       <div className="program_content_right_activity_img2"><img src={kv_img} alt={img}/></div>
                       <p className="font18_1"><a href="#">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</a></p>
                     </li>
@@ -268,7 +307,7 @@ function Program_index() {
                     <li>
                       <div className="program_content_right_activity_img2"><img src={kv_img} alt={img}/></div>
                       <p className="font18_1"><a href="#">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</a></p>
-                    </li>
+                    </li> */}
 
                   </ul>
                 </div>
