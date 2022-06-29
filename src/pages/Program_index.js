@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './../css/program_master.css';
 import './../css/program_article_share.css';
 import queryString from "query-string";
+import Footer from './../components/Footer.js';
 var parsed = queryString.parse(window.location.search);
 var get_id=parsed.id;
 
@@ -314,9 +315,10 @@ function Program_index() {
             </div>
         </div>
       </main>
-      <footer>
+      {/* <footer>
         
-      </footer>
+      </footer> */}
+      <Footer />
     </div>
   );
 }
