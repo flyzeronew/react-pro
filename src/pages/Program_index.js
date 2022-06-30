@@ -17,6 +17,7 @@ var get_id=parsed.id;
 
 let img = 'img';
 let ad_img = 'ad_img';
+let logo = 'logo';
 
 function Program_index() {
     const [loading, setLoading] = useState('')
@@ -26,33 +27,7 @@ function Program_index() {
     const [program_info, setProgram_info] = useState('')
     const [relative_news, setRelative_news] = useState('')
     const [articles, setArticles] = useState('')
-    // const getDataFromServer = async () => {
-    //     // 先開起載入指示器
-    //     // 注意header資料格式要設定，伺服器才知道是json格式
-       
-    //     const response = await fetch(
-    //       'https://tvbsapp.tvbs.com.tw/program_api/index_cover?id=' + get_id,
-    //       {
-    //         method: 'get',
-    //         headers: new Headers({
-    //           Accept: 'application/json',
-    //           'Content-Type': 'application/json',
-    //         }),
-    //       }
-    //     )
-    //     const coverdata = await response.json()
-
-
-    //     setCover(coverdata.data[0])
     
-    //     console.log(coverdata)
-        
-    //     // 3秒後關閉指示器
-    //     setTimeout(() => {
-    //       // setIsLoading(false)
-    //     }, 3000)
-    //   }
-
     //多組api fetch
     const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords"];
 
@@ -67,9 +42,6 @@ function Program_index() {
       setTime(result3.data[0]);
       setProgram_info(result4.data[0]);
       setRelative_news(result5.data.slice(0,2))
-      //let relative_news_two=relative_news.slice(0,2);
-      //console.log(relative_news_two);
-      //console.log(relative_news);
     };
 
     const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list"];
@@ -120,7 +92,7 @@ function Program_index() {
           <meta name="description" content="導言"/>                
        </Helmet> 
       <header>
-        <Header img={img} get_id={get_id}/>
+        <Header img={img} get_id={get_id} logo={logo}/>
       </header>
       <main>      
         <div className="height20px"></div>
@@ -172,52 +144,6 @@ function Program_index() {
               <div className="height20px"></div>
 
               <div className="program_content_main_information2">
-                {/* <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
-                    </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
-                    </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
-                    </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
-                    </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
-                    </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
-                </li> */}
                 {/* 文章url看樣子，可能還要再思考一下路由*/}
                 {Array.from(articles).map((item, index) => (
                       <li>
@@ -263,20 +189,6 @@ function Program_index() {
                       </div>
                   </div>
 
-                  {/* <div className="program_content_main_information_one">
-                      <div className="program_content_main_information_one_img1"><img src={kv_img} alt={img}/></div>
-                      <div className="program_content_main_information_one_p1">
-                        <p className="font24_2">TVBS 56頻道 / 女人我最大</p>
-                        <p className="font18_3">主持人:藍心湄</p>
-                        <p className="font18_3">每週一至週五 晚間6點</p>
-                        <p className="font18_4">
-                          ★ 高畫質完整版【<a href="#">線上看</a>】<br/>
-                          ★ <a href="#">http://goo.gl/2C0hKj</a><br/>
-                          ★ 快來訂閱【<a href="#">TVBS 女人我最大</a>】官方頻道！
-                        </p>
-                      </div>
-                  </div> */}
-
                 </div>
             </div>
 
@@ -300,24 +212,12 @@ function Program_index() {
                       <p className="font18_1"><a href={item.share_url}>{item.news_title}</a></p>
                     </li>
                     ))}
-                    {/* <li>
-                      <div className="program_content_right_activity_img2"><img src={kv_img} alt={img}/></div>
-                      <p className="font18_1"><a href="#">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</a></p>
-                    </li>
-
-                    <li>
-                      <div className="program_content_right_activity_img2"><img src={kv_img} alt={img}/></div>
-                      <p className="font18_1"><a href="#">女人我最大好康活動女人我最大好康活動女人我最大好康活動女人我最大好康活動</a></p>
-                    </li> */}
-
+ 
                   </ul>
                 </div>
             </div>
         </div>
       </main>
-      {/* <footer>
-        
-      </footer> */}
       <Footer />
     </div>
   );
