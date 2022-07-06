@@ -5,7 +5,34 @@ export default class Myjs  extends React.Component {
 
     componentDidMount(){
 
-
+    // 大首頁共用
+    
+    // 漢堡
+    
+    $('.nav_subtitle_m').each(function(i) {
+        $(this).click(function() {
+            $(this).toggleClass('op');
+            if($(this).hasClass('op')){
+                $(this).find('img').css({transform:'rotate(180deg)'});
+                $('.nav_sub_m').eq(i).slideDown();
+            }else{
+                $(this).find('img').css({transform:'rotate(0deg)'});
+                $('.nav_sub_m').eq(i).hide();
+            }
+        }); 
+    });
+    $('.ham').click(function() {   
+        $('.nav_inner_m').css({'right':'0'});
+        $('nav').css({'height':'100%'});
+        
+    });
+    $('.ham_close').click(function() {
+        $('.nav_subtitle_m').find('op').remove();
+        $('.nav_inner_m').css({'right':'-100%'});
+        $('nav').css({'height':'0'});
+    });
+    
+    // 大首頁共用ed
         $(window).scroll(function(){object_scroll(); });
         function object_scroll(){
         if($(window).scrollTop()>50){

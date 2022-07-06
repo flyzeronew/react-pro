@@ -28,15 +28,22 @@ p{text-align:left;}
 
 
 /* 節目官網主架構 */	
-.program_container {margin: 0 auto;padding: 0;position: relative;}
+.program_container {margin: 0 auto;padding: 0;}
 
 /* 按鈕列總包------------------------------------------------------------------------------------------------------ */
 /* 按鈕列底 */
 .program_header{background-color:#933571;}
+@media (max-width: 1199px){
+	.program_header{width:1200px;}
+}
+@media (max-width: 1023px){
+	.program_header{width:100%;}
+}
 /* 按鈕列底 ed*/
 
 /* 共用框 */
 .program_header_box,.program_ad_box,.program_content,.program_content2,.program_content3,.program_content3_box{width:1200px;margin: 0 auto; clear:both; margin-bottom:20px;overflow:hidden;}
+
 .program_ad_box{margin-bottom:0px;}
 .program_header_box{margin-bottom:0px;overflow:visible;height:51px;position:relative;}
 .program_content3{width:100%;background-color:#f3f2f2;}
