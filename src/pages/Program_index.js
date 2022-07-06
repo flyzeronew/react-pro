@@ -12,8 +12,10 @@ import './../css/program_master.css';
 import './../css/program_article_share.css';
 import queryString from "query-string";
 import Footer from './../components/Footer.js';
-var parsed = queryString.parse(window.location.search);
-var get_id=parsed.id;
+
+var get_pathname=window.location.pathname.split('/').filter(Boolean);
+var get_id=get_pathname[0];
+
 
 let img = 'img';
 let ad_img = 'ad_img';
