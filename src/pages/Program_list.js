@@ -19,7 +19,7 @@ let img = 'img';
 let ad_img = 'ad_img';
 let logo = 'logo';
 
-function Program_index() {
+function Program_list() {
     const [loading, setLoading] = useState('')
     const [cover, setCover] = useState('')
     const [social, setSocial] = useState('')
@@ -107,19 +107,111 @@ function Program_index() {
         <div className="height20px"></div>
         <div className="program_content">
           <div className="program_content_main">
-            <div className="program_content_main_kv">          
-                    <li>
-                        <a href={cover.url} target="_blank" rel="noreferrer" >
-                          <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
-                          <div className="img">
-                            <div className="mask"></div>
-                            <img src={cover.cover_image} alt={ad_img}/>
-                            {/* <img src={kv_img} alt={ad_img}/> */}
-                          </div>
-                        </a>
-                    </li>
+            <div className="program_content_main_information_titel">
+                <p className="program_content_main_information_titel_p font30_1">精彩內容</p>
+                <div className="program_content_main_information_titel_more"></div>
+                <div className="line01"></div>
             </div>
+            <div className="height20px"></div>
+              <div className="program_content_main_information_box1">
+                  <div className="program_content_main_information">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
+                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="jump_list pc_display">
+                    <ul>
+                        <li><a href="#">最前頁</a></li>
+                        <li><a href="#">上一頁</a></li>
+                        <li className="act"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">下一頁</a></li>
+                        <li><a href="#">最前頁</a></li>
+                        <li class="jump_list_number">1/463</li>
+                        <li class="jump_list_number2">1</li>
+                        <li><a href="#">Go</a></li>
+                     </ul>
+                  </div>
+              </div>
           </div>
+
           <div className="program_content_right">
 
             <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
@@ -130,97 +222,10 @@ function Program_index() {
 
           </div>
         </div>
-         <div className="program_content2">
-          <div className="program_content2_main2">
-            
-              <div className="program_content_main_information_titel">
-                  <p className="program_content_main_information_titel_p font30_1">精彩內容</p>
-                  <div className="program_content_main_information_titel_more">
-                    <div className="more01"><a className="font15_1" href="#">MORE</a></div>
-                  </div>
-                  <div className="line01"></div>
-              </div>
-              
-              <div className="height20px"></div>
-
-              <div className="program_content_main_information2">
-                {/* 文章url看樣子，可能還要再思考一下路由*/}
-                {Array.from(articles).map((item, index) => (
-                      <li>
-                      <a href={`/reveiew/article/`+item.id}>
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={item.cover_image} alt={img}/>
-                    </div>
-                    <p className="font24_1">{item.title}</p>
-                  </a>
-                    </li>
-                    ))}
-
-              {/* 下面這塊差廣告 */}
-                <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
-                    </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
-                </li>
-              </div>
-          </div>
-        </div>
-        <div className="program_content">
-            <div className="program_content_main">
-                <div className="program_content_main_information_box">
-                    <div className="program_content_main_information_titel">
-                        <p className="program_content_main_information_titel_p font30_1">節目資訊</p>
-                        <div className="program_content_main_information_titel_more">
-                            <div className="more01"><a className="font15_1" href="#">MORE</a></div>
-                        </div>
-                        <div className="line01"></div>
-                    </div>
-
-                    <div className="height20px"></div>
-
-                  <div className="program_content_main_information_one">
-                      <div className="program_content_main_information_one_img1"><img src={program_info.image} alt={img}/></div>
-                      <div className="program_content_main_information_one_p1" dangerouslySetInnerHTML={{__html: program_info.content}}>
-                      </div>
-                  </div>
-
-                </div>
-            </div>
-
-            <div className="program_content_right">   
-                <div className="program_content_main_information_titel">
-                  <p className="program_content_main_information_titel_p font30_1">相關新聞</p>
-                  <div className="program_content_main_information_titel_more">
-                  <div className="more01"><a className="font15_1" href="#">MORE</a></div>
-                  </div>
-                  <div className="line01"></div>
-                </div>
-
-                <div className="height20px"></div>
-
-                <div className="program_content_right_activity2">
-                  <ul>
-
-                    {Array.from(relative_news).map((item, index) => (
-                      <li>
-                      <div className="program_content_right_activity_img2"><img src={item.news_img} alt={img}/></div>
-                      <p className="font18_1"><a href={item.share_url}>{item.news_title}</a></p>
-                    </li>
-                    ))}
- 
-                  </ul>
-                </div>
-            </div>
-        </div>
       </main>
       <Footer />
     </div>
   );
 }
 
-export default Program_index;
+export default Program_list;

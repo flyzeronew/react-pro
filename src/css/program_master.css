@@ -43,7 +43,7 @@ p{text-align:left;}
 
 /* 共用框 */
 .program_header_box,.program_ad_box,.program_content,.program_content2,.program_content3,.program_content3_box{width:1200px;margin: 0 auto; clear:both; margin-bottom:20px;overflow:hidden;}
-
+.program_content{position: relative;}
 .program_ad_box{margin-bottom:0px;}
 .program_header_box{margin-bottom:0px;overflow:visible;height:51px;position:relative;}
 .program_content3{width:100%;background-color:#f3f2f2;}
@@ -51,7 +51,7 @@ p{text-align:left;}
 /* 共用框 ed */
 
 /* 手機版漢堡 */
-.program_header_box_hamburger{width:100%;top:51px;position:absolute;background-color:#ac005b;z-index:2; padding-bottom:10px;box-shadow: rgba(0,0,0,0.6) 0px 1px 2px; display:none;}
+.program_header_box_hamburger{width:100%;top:51px;position:absolute;background-color:#933571;z-index:2; padding-bottom:10px;box-shadow: rgba(0,0,0,0.6) 0px 1px 2px; display:none;}
 .program_header_box_hamburger1{}
 .program_header_box_hamburger1 li{border-bottom:#fa67b6 1px dashed;}
 .program_header_box_hamburger1 li a{display:block;padding:10px 20px;}.program_header_box_hamburger1 li a:hover{background-color:#db0277;}
@@ -82,7 +82,7 @@ p{text-align:left;}
 
 /* 更多子選單 */
 .program_header_nav_child{position:absolute;z-index:1;left:-23px;display:none; box-shadow: rgba(0,0,0,0.6) 0px 1px 2px;}
-.program_header_nav_child li a{margin:0 auto;width:100px;text-align:center;background-color:#ac005b; padding:10px 10px !important;}
+.program_header_nav_child li a{margin:0 auto;width:100px;text-align:center;background-color:#933571; padding:10px 10px !important;}
 /* 更多子選單ed */
 
 
@@ -91,7 +91,7 @@ p{text-align:left;}
 /* 社群按鈕 ed */
 
 /* 手機版按鈕 */
-.program_header_arraw{width:25px;float:right;margin:12px; cursor:pointer; display:none;}
+.program_header_arraw{width:20px;float:right;margin:12px; cursor:pointer; display:none;}
 /* 手機版按鈕 ed */
 
 /* 按鈕列總包ed------------------------------------------------------------------------------------------------------- */
@@ -149,7 +149,7 @@ p{text-align:left;}
 	background-color: rgba(0,0,0,0.4);transition: 0.3s;
 }
 .program_content_main_information li a:hover p{
-	color: #ac005b;
+	color: #933571;
 }
 .program_content_main_information_box{text-align:center;}
 .program_content_main_information p{text-align:left;}
@@ -178,24 +178,62 @@ p{text-align:left;}
 /*3欄*/
 .program_content_main_information2 li{width:382px; margin-right:20px;  display:inline-block;overflow:hidden;margin-bottom:20px;}
 .program_content_main_information2_img{height:210px;overflow:hidden;margin-bottom:5px;position: relative;}
-.program_content_main_information2 li a:hover p{color: #ac005b;}
+.program_content_main_information2 li a:hover p{color: #933571;}
 .program_content_main_information2 li a:hover .mask{background-color: rgba(0,0,0,0.4);transition: 0.3s;}
 /*3欄ed*/
 
-.program_content_main_information li:nth-child(even),.program_content_main_information2 li:nth-child(3n){margin-right:0px;}
+/*左側3欄*/
+.program_content_main_information3{overflow:hidden;margin:0 auto; text-align:center;}
+.program_content_main_information3 li{width:266px; margin-right:20px; display:inline-block;overflow:hidden;margin-bottom:5px;}
+.program_content_main_information3_img{height:146px;overflow:hidden;margin-bottom:5px;position:relative;}
+.program_content_main_information3 li:nth-child(3n){margin-right:0px;}
+@media (max-width: 870px){
+	.program_content_main_information3 li {
+		width: 100%;	
+		margin-right: 0px;
+		margin-bottom: 5px;
+	}
+	.program_content_main_information3_img {
+		float: left;
+		width: 250px;
+		height: 140px;
+		overflow: hidden;
+		margin-right: 10px;
+	}
+}
+@media (max-width: 640px){
+	.program_content_main_information3 li {width: 100%;	}
+	.program_content_main_information3_img {
+		width: 180px;
+		height: 100px;
+	}
+}
+@media (max-width:414px){
+	.program_content_main_information3 li p a {
+		font-size: 16px;
+	}
+}
+@media (max-width: 359px){
+	.program_content_main_information3_img {
+		width: 120px;
+		height: 66px;
+	}
+}
 
+/*左側3欄ed*/
+
+.program_content_main_information li:nth-child(even),.program_content_main_information2 li:nth-child(3n){margin-right:0px;}
 
 /*內容共用*/
 
 
 /* 網頁內容ed*/
 
-
 /* 網頁內容包中間 ed */
 
 /* 網頁內容包右邊 */
 .program_content_right{width:330px;float:right;}
-.program_content_right_time{background-color:#ac005b;padding:10px 2px 10px 20px; background-image:url(../images/icon_label01.svg); 
+.program_content_right_time{background-color:#933571;padding:10px 2px 10px 20px; background-image:url(../images/icon_label01.svg); 
 background-size:11px; background-repeat:no-repeat; background-position:6px 16px;}
 .program_content_right_fb_box{height:418px;border:#e9ebee 1px solid;}
 .program_content_right_ad_box{padding:15px;background-color:#f3f2f2;border:#e9ebee 1px solid;}
@@ -220,7 +258,7 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 	width:100%;height:100%;background-color: rgba(0,0,0,0);
 	position:absolute;z-index:1;transition: 0.3s;
 }
-.program_content_right_activity li a:hover p{color: #ac005b;transition: 0.3s;}
+.program_content_right_activity li a:hover p{color: #933571;transition: 0.3s;}
 .program_content_right_activity li a:hover .mask{background-color: rgba(0,0,0,0.4);transition: 0.3s;}
 /* 好康活動ed */
 /* 相關新聞 */
@@ -248,7 +286,7 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 	width:100%;height:100%;background-color: rgba(0,0,0,0);
 	position:absolute;z-index:1;transition: 0.3s;
 }
-.program_content_right_activity2 li a:hover p{color: #ac005b;transition: 0.3s;}
+.program_content_right_activity2 li a:hover p{color: #933571;transition: 0.3s;}
 .program_content_right_activity2 li a:hover .mask{background-color: rgba(0,0,0,0.4);transition: 0.3s;}
 
 @media (max-width: 1024px){
@@ -300,6 +338,32 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 .program_content2_main_box .program_content_main_information2{display:none;}
 .program_content2_main_box .program_content_main_information2:nth-child(1){display:block;}
 /* 網頁內容包2 ed */
+/* 網頁內頁 */
+.program_content_main_detail{}
+.program_content_main_detail_titel{margin-bottom:10px;}
+.program_content_main_detail_time{width:0; background-image:url(../images/icon_time.svg); background-position:left center;background-size:15px; background-repeat:no-repeat; padding-left:22px;margin-bottom:20px;}
+.program_content_main_detail_context{}
+.program_content_main_detail_context_img{margin-bottom:20px;}
+.program_content_main_detail_context p{margin-bottom:20px; line-height:32px;}.program_content_main_detail_context p a{ color:#ce1a79;}
+@media (max-width: 1024px){
+	.program_content_main_detail{padding:0 15px;}
+}
+/* 標籤連結 */
+.program_content_main_detail_label_box{}
+.program_content_main_detail_label{border-bottom:#c8c9cb 1px solid; padding-bottom:10px; margin-bottom:10px; overflow:hidden;}
+.program_content_main_detail_label_box .program_content_main_detail_label:last-child{border:none;}
+.program_content_main_detail_label_titel{float:left;padding:8px 0;margin-right:20px;}
+.program_content_main_detail_label_titel_list{margin-top:8px;float:left; display:block;}
+.program_content_main_detail_label_titel_list li{ display:inline-block; margin-bottom:10px;}
+.program_content_main_detail_label_titel_list li a{padding:5px 5px;border-radius:30px;}.program_content_main_detail_label_titel_list li a:hover{ background-color:#933571; color:rgba(253,252,252,1.00);}
+/* 標籤連結 ed */
+
+/* 你可能也會喜歡 */
+.program_content_main_detail_like{overflow:hidden;}
+.program_content_main_detail_like_titel{border-bottom:#c8c9cb 3px solid;padding-bottom:2px; font-weight:bolder; margin-bottom:20px;}
+/* 你可能也會喜歡ed */
+
+/* 網頁內頁 ed */
 /* 節目官網主架構ed*/	
 
 /* RWD響應式在下面----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -320,10 +384,9 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 /* 手機版節目播放時間 */
 .program_time{display:block;}
 /* 手機版節目播放時間 ed*/
-
 /* 網頁內容包中間 */
-.program_content_main{width:100%;float:none;}
 
+.program_content_main{width:100%;float:none;}
 /* 主視覺 kv */
 .program_content_main_kv,.program_content_main_kv li{height:566px;}
 /* 主視覺 kv ed*/
@@ -413,6 +476,8 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 }
 @media (max-width: 640px){
 /* 主視覺 kv */
+.program_header_box_hamburger{top:45px;}
+.program_header_box{height:45px;}
 .program_content_main_kv,.program_content_main_kv li{height:354px;}
 .program_content_main_kv_writing p{ padding:8px 15px;}
 /* 主視覺 kv ed*/	
@@ -492,5 +557,31 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 /* 網頁內容包右邊3欄 ed */	
 }
 /* RWD響應式在下面----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ed*/	
+/* PC上下頁文章 */
+.program_content_updown_page_box{position:absolute; left:-120px; top:220px;z-index:2;}
+.program_content_updown_page{position:fixed; width:1200px;}
+.program_content_updown_page ul{position:relative;}
+.program_content_updown_page li{
+	position:relative;
+	transition:0.3s; cursor:pointer;
+}
+.program_content_updown_page_L{}
+.program_content_updown_page_R{}
+.program_content_updown_page_arraw{width:50px;height:130px; background-color:#c8c9cb; position:absolute; z-index:2;background-image:url(../images/arraw02-L.png);background-repeat:no-repeat; }
+.program_content_updown_page li:nth-child(2) .program_content_updown_page_arraw{background-color:#c8c9cb; position:absolute; background-image:url(../images/arraw02-R.png);background-repeat:no-repeat; right:-240px;}
+.program_content_updown_page li:nth-child(2) .program_content_updown_page_context_box{right:-240px;}
+.program_content_updown_page_context_box{
+	position:absolute;width:380px; height:120px; background-color:#933571; overflow:hidden; padding:5px 5px 5px 5px; background-image:url(../images/arraw02-L.png); background-repeat:no-repeat; display:none;}
+.program_content_updown_page li:nth-child(2) .program_content_updown_page_context_box{background-image:url(../images/arraw02-R2.png); background-repeat:no-repeat;}
+.program_content_updown_page li:hover:nth-child(2) .program_content_updown_page_context{display:block;}
 
+
+.program_content_updown_page_context,.program_content_updown_page_context2{margin-left:45px;margin-right:0px; padding:5px;background-color:#fff; height:110px; }
+.program_content_updown_page li:nth-child(2) .program_content_updown_page_context,.program_content_updown_page_context2{margin-left:0px; margin-right:45px;}
+.program_content_updown_page_context a p:hover,.program_content_updown_page_context2 a p:hover{color:#933571;}
+.program_content_updown_page_context a p,.program_content_updown_page_context2 a p{width:110px;height:95px;float: left;overflow: hidden;}
+.program_content_updown_page_context-img{float:left;width:200px;height:100px; overflow: hidden; margin-right:10px;padding-bottom:10px;}
+@media (max-width: 1366px){.program_content_updown_page li{display:none;}}
+
+/* PC上下頁文章 ed */
 
