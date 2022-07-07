@@ -1,5 +1,6 @@
 import React from "react";
 import $ from 'jquery';
+import queryString from "query-string";
 
 export default class Myjs  extends React.Component {
 
@@ -114,8 +115,16 @@ export default class Myjs  extends React.Component {
                 
                 });
             });
-      
-      }    
+
+            /*內頁上下頁控制*/
+            $(".program_content_updown_page_L .program_content_updown_page_arraw").mouseover(function(){$(this).fadeOut(100);$(".program_content_updown_page_L .program_content_updown_page_context_box").fadeIn(100);});
+            $(".program_content_updown_page_L .program_content_updown_page_context_box").mouseleave(function(){$(this).fadeOut(100);$(".program_content_updown_page_L .program_content_updown_page_arraw").fadeIn(100);});
+
+            $(".program_content_updown_page_R .program_content_updown_page_arraw").mouseover(function(){$(this).fadeOut(100);$(".program_content_updown_page_R .program_content_updown_page_context_box").fadeIn(100);});
+            $(".program_content_updown_page_R .program_content_updown_page_context_box").mouseleave(function(){$(this).fadeOut(100);$(".program_content_updown_page_R .program_content_updown_page_arraw").fadeIn(100);});
+            /*內頁上下頁控制 ed*/
+
+      }
     render(){return (
     <div className="myjs">
     </div>)}
