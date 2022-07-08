@@ -8,13 +8,13 @@ export default class Myjs  extends React.Component {
     
     // 漢堡
     $(document).ready(function(){ 
-
+        
             function header_go(){
                 $('.nav_inner_m li').removeClass('op');
                 $('.nav_inner_m li').find('dl').hide();
                 $('.nav_inner_m li').has('dl').addClass('arraw'); 
                 $('.nav_inner_m li').each(function(i) {                 
-                    $(this).click(function() {                        
+                    $(this).find('a').click(function() {                        
                         $(this).toggleClass('op');
                         if($(this).hasClass('op')){
                                 $('.nav_inner_m li').eq(i).find('dl').show();
