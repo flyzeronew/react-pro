@@ -240,15 +240,24 @@ nav{
     background-image: url(../images/dropdown.svg);
     background-repeat: no-repeat;
     background-size:15px;
-    background-position: right 15px;
+    background-position: 95% 15px;
 }
 .nav_inner_m li.arraw2{  
     background-image: url(../images/dropdown2.svg);
     background-repeat: no-repeat;
     background-size:15px;
-    background-position: right 15px;
+    background-position: 95% 15px;
+}
+
+.nav_inner_m li.arraw2 dt a{
+    background:none;
+}
+
+.nav_inner_m li.arraw2:hover{  
+    
 }
 .nav_inner_m li a{
+    border-radius: 5px;
     display: block;
     font-size: 18px;
     line-height: 25px;

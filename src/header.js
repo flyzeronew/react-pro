@@ -33,10 +33,9 @@ class Header extends React.Component {
         fetch('https://www.tvbs.com.tw/portal/header?api=header&route=pc')
         .then(res => res.text())
         .then(text => this.setState({
-            header:text,
+            header:text
         }));
 
-   
     }
 
 
@@ -44,6 +43,7 @@ class Header extends React.Component {
   render () {
     return (
         <div className="program_header">
+      
             <div className="main_header">
                 <div className="header_inner">
                     <h1 className="header_logo"><a href="https://www.tvbs.com.tw/" title="TVBS"><img src={tvbslogo} alt={this.props.logo}/></a></h1>                    

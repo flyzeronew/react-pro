@@ -10,23 +10,27 @@ export default class Myjs  extends React.Component {
     $(document).ready(function(){ 
         
             function header_go(){
-                $('.nav_inner_m li').removeClass('op');
-                $('.nav_inner_m li').find('dl').hide();
-                $('.nav_inner_m li').has('dl').addClass('arraw'); 
-                $('.nav_inner_m li').each(function(i) {                 
+                $('.nav_inner_m li').each(function(i) {
+                    $('.nav_inner_m li').removeClass('op');
+                    $('.nav_inner_m li').find('dl').hide();
+                    $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw2');
+                    $('.nav_inner_m li').eq(i).has('dl').addClass('arraw'); 
+                                  
                     $(this).find('a').click(function() {                        
                         $(this).toggleClass('op');
                         if($(this).hasClass('op')){
-                                $('.nav_inner_m li').eq(i).find('dl').show();
+                                $('.nav_inner_m li').eq(i).find('dl').show();                                
                                 $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw');
                                 $('.nav_inner_m li').eq(i).has('dl').addClass('arraw2');
-                            }else{
+                                
+                            }else{                               
                                 $('.nav_inner_m li').find('dl').hide();
                                 $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw2');
-                                $('.nav_inner_m li').eq(i).has('dl').addClass('arraw');
+                                $('.nav_inner_m li').eq(i).has('dl').addClass('arraw');                             
 
                             }
                     });
+
                 });
             }
 
@@ -38,7 +42,7 @@ export default class Myjs  extends React.Component {
 
             });
             $('.ham_close').click(function() {
-                header_go();
+                header_go();          
                 $('.nav_inner_m').css({'right':'-100%'});
                 $('.nav_bg').fadeOut(200);
                 $('.ham_close').fadeOut(200);
