@@ -3,34 +3,34 @@ import $ from 'jquery';
 import queryString from "query-string";
 
 export default class Myjs  extends React.Component {
-
     componentDidMount(){
 
     // 大首頁共用
     
     // 漢堡
-    
-    $('.nav_subtitle_m').each(function(i) {
-        $(this).click(function() {
+    $(document).ready(function(){
+    $('.nav_inner_m li').each(function(i) {
+        $('.nav_inner_m li').eq(i).click(function() {     
             $(this).toggleClass('op');
             if($(this).hasClass('op')){
-                $(this).find('img').css({transform:'rotate(180deg)'});
-                $('.nav_sub_m').eq(i).slideDown();
+                $('.nav_inner_m li').eq(i).find('dl').show(); 
             }else{
-                $(this).find('img').css({transform:'rotate(0deg)'});
-                $('.nav_sub_m').eq(i).hide();
+                $('.nav_inner_m li').eq(i).find('dl').hide(); 
             }
+            
         }); 
     });
-    $('.ham').click(function() {   
+    $('.ham').click(function() {
+        $('.ham_close').fadeIn(200);
         $('.nav_inner_m').css({'right':'0'});
-        $('nav').css({'height':'100%'});
+        $('.nav_bg').show();
         
     });
     $('.ham_close').click(function() {
         $('.nav_subtitle_m').find('op').remove();
         $('.nav_inner_m').css({'right':'-100%'});
-        $('nav').css({'height':'0'});
+        $('.nav_bg').fadeOut(200);
+        $('.ham_close').fadeOut(200);
     });
     
     // 大首頁共用ed
@@ -139,16 +139,14 @@ export default class Myjs  extends React.Component {
                 });
             });
 
-            /*內頁上下頁控制*/
-
-            
+            /*內頁上下頁控制*/            
             $(".program_content_updown_page_L .program_content_updown_page_arraw").mouseover(function(){$(this).fadeOut(100);$(".program_content_updown_page_L .program_content_updown_page_context_box").fadeIn(100);});
             $(".program_content_updown_page_L .program_content_updown_page_context_box").mouseleave(function(){$(this).fadeOut(100);$(".program_content_updown_page_L .program_content_updown_page_arraw").fadeIn(100);});
 
             $(".program_content_updown_page_R .program_content_updown_page_arraw").mouseover(function(){$(this).fadeOut(100);$(".program_content_updown_page_R .program_content_updown_page_context_box").fadeIn(100);});
             $(".program_content_updown_page_R .program_content_updown_page_context_box").mouseleave(function(){$(this).fadeOut(100);$(".program_content_updown_page_R .program_content_updown_page_arraw").fadeIn(100);});
             /*內頁上下頁控制 ed*/
-
+        });
       }
     render(){return (
     <div className="myjs">

@@ -5,13 +5,12 @@ import searchbtn from './images/search_btn.svg';
 import ham from './images/ham.svg';
 import ham_close from './images/ham_close.svg';
 import dropdown from './images/dropdown.svg';
-
-
 import './css/main.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 class Header extends React.Component {
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -28,14 +27,22 @@ class Header extends React.Component {
             yt:json.program.youtube,
             menu:json.data,
         }));
+
+        fetch('https://www.tvbs.com.tw/portal/header?api=header&route=pc')
+        .then(res => res.text())
+        .then(text => this.setState({
+            header:text,
+        }));
+
         
+
     }
-    
+
+
 
   render () {
     return (
         <div className="program_header">
-
             <div className="main_header">
                 <div className="header_inner">
                     <h1 className="header_logo"><a href="https://www.tvbs.com.tw/" title="TVBS"><img src={tvbslogo} alt={this.props.logo}/></a></h1>                    
@@ -58,7 +65,15 @@ class Header extends React.Component {
                 </div>
 
                 <nav>
-                    <ul className="nav_inner_pc">
+                    
+                    <div className="nav_bg"></div>                    
+                    <div className="nav_inner_pc" dangerouslySetInnerHTML={{__html: this.state.header}} ></div>
+                    <div className="m_box">
+                        <div className="ham_close"><img src={ham_close} alt="ham_close"/></div>
+                        <div className="nav_inner_m" dangerouslySetInnerHTML={{__html: this.state.header}} ></div>
+                    </div>
+                    
+                    {/* <ul className="nav_inner_pc">
                         <li><a href="https://news.tvbs.com.tw/" target="_new">TVBS新聞</a></li>
                         <li><a href="https://woman.tvbs.com.tw/" target="_new">女人我最大</a></li>
                         <li><a href="https://supertaste.tvbs.com.tw/" target="_new">食尚玩家</a></li>
@@ -113,8 +128,7 @@ class Header extends React.Component {
                             </div>
                         </li>
                     </ul>
-                    <ul className="nav_inner_m">
-                        <button className="ham_close"><img src={ham_close} alt="ham_close" title="ham_close"/></button>
+                    <ul className="nav_inner_m">                        
                         <li><a href="https://news.tvbs.com.tw/" target="_new">TVBS新聞</a></li>
                         <li><a href="https://woman.tvbs.com.tw/" target="_new">女人我最大</a></li>
                         <li><a href="https://supertaste.tvbs.com.tw/" target="_new">食尚玩家</a></li>
@@ -169,7 +183,7 @@ class Header extends React.Component {
                             </div>
                         </li>
 
-                </ul>
+                    </ul> */}
                 </nav>
             </div>
 

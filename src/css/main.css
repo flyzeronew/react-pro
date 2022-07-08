@@ -172,7 +172,8 @@ nav{
     background-color: var(--main-color);
     z-index: 99;
 }
-.nav_inner_pc{
+.nav_bg{width:100%;height:100vh;position:fixed;top:0;background-color: rgba(0, 0, 0, 0.7);z-index:10;display:none;}
+.nav_inner_pc ul{
     width: var(--l-width-1200px);
     margin: 0 auto;
     display: flex;
@@ -196,7 +197,7 @@ nav{
     background-color: var(--secondary-color);
 }
 
-.nav_sub{
+.nav_inner_pc dl{
     display: none;
     position: absolute;
     width: fit-content;
@@ -206,7 +207,8 @@ nav{
     padding-bottom: 7px;
     z-index: 10;
 }
-.nav_inner_pc .nav_sub a {
+.nav_inner_pc dl dt a {
+    display: block;
     border-radius: 0;
     margin: 0;
     padding: 4px 20px;
@@ -214,13 +216,15 @@ nav{
     line-height: 32px;
     background-color: var(--main-color);
 }
-.nav_inner_pc .nav_sub a:hover{
+.nav_inner_pc dl dt a:hover{
     background-color: var(--secondary-color);
 }
-.nav_inner_pc li:hover .nav_sub{
+.nav_inner_pc li:hover  dl{
     display: flex;
 }
-
+.m_box{
+    position: relative;
+}
 .ham_close{
     width: 25px;
     height: 25px;
@@ -229,6 +233,7 @@ nav{
     position: absolute;
     top: 20px;
     right: 25px;
+    display:none;z-index: 101;
 }
 
 .nav_inner_m li a{
@@ -248,10 +253,10 @@ nav{
     right:0;
 }
 
-.nav_inner_m .nav_sub_m a{
+.nav_inner_m dl dt a{
     color: #fff;
 }
-.nav_sub_m{
+.nav_inner_m dl{
     display: none;
     padding-bottom: 10px;
     border-bottom: 1px solid #788095;
