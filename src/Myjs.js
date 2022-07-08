@@ -34,14 +34,37 @@ export default class Myjs  extends React.Component {
     });
     
     // 大首頁共用ed
+   
         $(window).scroll(function(){object_scroll(); });
+        var header_h=$('.program_header').outerHeight(true);
+        var lastScrollTop = 0;
         function object_scroll(){
-        if($(window).scrollTop()>50){
-            $('#back').fadeIn(300);
+
+        if(($(window).scrollTop()>lastScrollTop)){         
+            if($(window).width()<1024){                
+                $('.program_content_community_list_mobile').show();
+            }else{
+                $('.program_content_community_list_mobile').hide();
+            }            
         }else{
+            $('.program_content_community_list_mobile').hide();
+        }
+        lastScrollTop = $(window).scrollTop();
+        if($(window).scrollTop()>header_h){
+            $('.program_content_updown_page_box').fadeIn(300);
+            $('.program_content_community_list').fadeIn(300);
+        }else{
+            $('.program_content_updown_page_box').hide();
+            $('.program_content_community_list').hide();
+        }
+
+        if($(window).scrollTop()>50){            
+            $('#back').fadeIn(300);
+        }else{                        
             $('#back').hide();
         }
        }
+      
         /*gotop*/
         var $el = $(scrollableElement('html', 'body'));
         var speed = 550;
@@ -117,6 +140,8 @@ export default class Myjs  extends React.Component {
             });
 
             /*內頁上下頁控制*/
+
+            
             $(".program_content_updown_page_L .program_content_updown_page_arraw").mouseover(function(){$(this).fadeOut(100);$(".program_content_updown_page_L .program_content_updown_page_context_box").fadeIn(100);});
             $(".program_content_updown_page_L .program_content_updown_page_context_box").mouseleave(function(){$(this).fadeOut(100);$(".program_content_updown_page_L .program_content_updown_page_arraw").fadeIn(100);});
 

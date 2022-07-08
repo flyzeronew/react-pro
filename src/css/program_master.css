@@ -585,3 +585,14 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 
 /* PC上下頁文章 ed */
 
+/* 內頁用社群跟著跑 */
+.program_content_community_list_box{position:absolute; left:-70px;}
+.program_content_community_list{position:fixed;top:0; display:none;}
+.program_content_community_list li{width:50px; margin-bottom:10px;}
+@media (max-width: 1366px){.program_content_community_list_box{display:none;}}
+/* 手機版 */
+.program_content_community_list_mobile{ width:100%; position:fixed;left:0;top:0;background-color: rgba(0,0,0,0.5); padding:8px; z-index:2;}
+.program_content_community_list_mobile li{width:45px; margin-right:8px; display:inline-block;}
+/* 手機版 ed */
+/* 內頁用社群跟著跑ed */
+

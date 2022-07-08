@@ -7,6 +7,8 @@ import ad_top from './../images/ad970x90.jpg';
 import ad_top_m from './../images/ad320x100.jpg';
 import ad_300x250 from './../images/ad300x250.jpg';
 import ad_650x100 from './../images/ad650x100.jpg';
+import facebook_img from './../images/content_community_list_facebook.svg';
+import talk_img from './../images/content_community_list_talk.svg';
 import kv_img from './../images/kv850x470.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -110,6 +112,8 @@ function Program_detail() {
         <div className="height20px"></div>
         <div className="program_content">
           <div className="program_content_updown_page_box pc_display">
+
+          {/* PC版上下頁文章 */}
             <div className="program_content_updown_page">
               <ul>
                 <li>
@@ -141,6 +145,26 @@ function Program_detail() {
               </ul>
             </div>
           </div>
+          {/* PC版上下頁文章 ed*/}
+          {/* 內頁用社群跟著跑 */}
+          <div className="program_content_community_list_box">
+              <div className="program_content_community_list">
+                <ul>
+                  <li><a href="##"><img src={facebook_img} alt={img}/></a></li>
+                  <li><a href="##"><img src={talk_img} alt={img}/></a></li>
+                </ul>
+              </div>
+          </div>
+          {/* 手機板 */}
+          <div class="program_content_community_list_mobile text_center mobile_display">
+            <ul>
+              <li><a href="##"><img src={facebook_img} alt={img}/></a></li>
+              <li><a href="##"><img src={talk_img} alt={img}/></a></li>
+            </ul>
+          </div>
+          {/* 手機板 ed*/}
+        {/* 內頁用社群跟著跑 ed*/}
+
           <div className="program_content_main">
 
               <div className="program_content_main_detail">
