@@ -1,4 +1,5 @@
 import React from "react";
+import $ from 'jquery';
 import arrow from './images/icon_label01.svg';
 import tvbslogo from './images/TVBS_logo.svg';
 import searchbtn from './images/search_btn.svg';
@@ -17,7 +18,8 @@ class Header extends React.Component {
           menu:[],
         };
     }
-    componentDidMount(){
+    componentDidMount(){        
+
         fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu?id='+this.props.get_id)
         .then(res => res.json())
         .then(json => this.setState({
@@ -34,8 +36,7 @@ class Header extends React.Component {
             header:text,
         }));
 
-        
-
+   
     }
 
 

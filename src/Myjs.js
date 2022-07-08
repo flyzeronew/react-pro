@@ -8,31 +8,40 @@ export default class Myjs  extends React.Component {
     // 大首頁共用
     
     // 漢堡
-    $(document).ready(function(){
-    $('.nav_inner_m li').each(function(i) {
-        $('.nav_inner_m li').eq(i).click(function() {     
-            $(this).toggleClass('op');
-            if($(this).hasClass('op')){
-                $('.nav_inner_m li').eq(i).find('dl').show(); 
-            }else{
-                $('.nav_inner_m li').eq(i).find('dl').hide(); 
-            }
+    $(document).ready(function(){ 
+
+          function header_go(){
             
-        }); 
-    });
-    $('.ham').click(function() {
-        $('.ham_close').fadeIn(200);
-        $('.nav_inner_m').css({'right':'0'});
-        $('.nav_bg').show();
-        
-    });
-    $('.ham_close').click(function() {
-        $('.nav_subtitle_m').find('op').remove();
-        $('.nav_inner_m').css({'right':'-100%'});
-        $('.nav_bg').fadeOut(200);
-        $('.ham_close').fadeOut(200);
-    });
-    
+                $('.nav_inner_m li').each(function(i) {
+
+                    $(this).find('a').click(function() {
+                        $(this).toggleClass('op');
+                        if($(this).hasClass('op')){
+                                $('.nav_inner_m li').eq(i).find('dl').show();
+                            }else{
+                                $('.nav_inner_m li').eq(i).find('dl').hide();
+                            }
+                    });
+                });
+
+           }
+
+            $('.ham').click(function() {
+                $('.nav_inner_m li').each(function(i) {
+                    $('.nav_inner_m li').eq(i).has('dl').addClass('arraw');
+                });
+                $('.ham_close').fadeIn(200);
+                $('.nav_inner_m').css({'right':'0'});
+                $('.nav_bg').show();
+                header_go();                
+            });
+            $('.ham_close').click(function() {
+                $('.nav_subtitle_m').find('op').remove();
+                $('.nav_inner_m').css({'right':'-100%'});
+                $('.nav_bg').fadeOut(200);
+                $('.ham_close').fadeOut(200);
+            });
+
     // 大首頁共用ed
    
         $(window).scroll(function(){object_scroll(); });
@@ -147,6 +156,7 @@ export default class Myjs  extends React.Component {
             $(".program_content_updown_page_R .program_content_updown_page_context_box").mouseleave(function(){$(this).fadeOut(100);$(".program_content_updown_page_R .program_content_updown_page_arraw").fadeIn(100);});
             /*內頁上下頁控制 ed*/
         });
+
       }
     render(){return (
     <div className="myjs">
