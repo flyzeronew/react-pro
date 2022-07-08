@@ -1,7 +1,6 @@
 import React from "react";
 import $ from 'jquery';
 import queryString from "query-string";
-
 export default class Myjs  extends React.Component {
     componentDidMount(){
 
@@ -10,36 +9,40 @@ export default class Myjs  extends React.Component {
     // 漢堡
     $(document).ready(function(){ 
 
-          function header_go(){
-            
-                $('.nav_inner_m li').each(function(i) {
-
-                    $(this).find('a').click(function() {
+            function header_go(){
+                $('.nav_inner_m li').removeClass('op');
+                $('.nav_inner_m li').find('dl').hide();
+                $('.nav_inner_m li').has('dl').addClass('arraw'); 
+                $('.nav_inner_m li').each(function(i) {                 
+                    $(this).click(function() {                        
                         $(this).toggleClass('op');
                         if($(this).hasClass('op')){
                                 $('.nav_inner_m li').eq(i).find('dl').show();
+                                $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw');
+                                $('.nav_inner_m li').eq(i).has('dl').addClass('arraw2');
                             }else{
-                                $('.nav_inner_m li').eq(i).find('dl').hide();
+                                $('.nav_inner_m li').find('dl').hide();
+                                $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw2');
+                                $('.nav_inner_m li').eq(i).has('dl').addClass('arraw');
+
                             }
                     });
                 });
-
-           }
+            }
 
             $('.ham').click(function() {
-                $('.nav_inner_m li').each(function(i) {
-                    $('.nav_inner_m li').eq(i).has('dl').addClass('arraw');
-                });
+                header_go();
                 $('.ham_close').fadeIn(200);
                 $('.nav_inner_m').css({'right':'0'});
                 $('.nav_bg').show();
-                header_go();                
+
             });
             $('.ham_close').click(function() {
-                $('.nav_subtitle_m').find('op').remove();
+                header_go();
                 $('.nav_inner_m').css({'right':'-100%'});
                 $('.nav_bg').fadeOut(200);
                 $('.ham_close').fadeOut(200);
+
             });
 
     // 大首頁共用ed
@@ -48,32 +51,31 @@ export default class Myjs  extends React.Component {
         var header_h=$('.program_header').outerHeight(true);
         var lastScrollTop = 0;
         function object_scroll(){
-
-        if(($(window).scrollTop()>lastScrollTop)){         
-            if($(window).width()<1024){                
-                $('.program_content_community_list_mobile').show();
+            if(($(window).scrollTop()>lastScrollTop)){
+                if($(window).width()<1024){
+                    $('.program_content_community_list_mobile').show();
+                }else{
+                    $('.program_content_community_list_mobile').hide();
+                }
             }else{
                 $('.program_content_community_list_mobile').hide();
-            }            
-        }else{
-            $('.program_content_community_list_mobile').hide();
-        }
-        lastScrollTop = $(window).scrollTop();
-        if($(window).scrollTop()>header_h){
-            $('.program_content_updown_page_box').fadeIn(300);
-            $('.program_content_community_list').fadeIn(300);
-        }else{
-            $('.program_content_updown_page_box').hide();
-            $('.program_content_community_list').hide();
+            }
+            lastScrollTop = $(window).scrollTop();
+            if($(window).scrollTop()>header_h){
+                $('.program_content_updown_page_box').fadeIn(300);
+                $('.program_content_community_list').fadeIn(300);
+            }else{
+                $('.program_content_updown_page_box').hide();
+                $('.program_content_community_list').hide();
+            }
+
+            if($(window).scrollTop()>50){
+                $('#back').fadeIn(300);
+            }else{
+                $('#back').hide();
+            }
         }
 
-        if($(window).scrollTop()>50){            
-            $('#back').fadeIn(300);
-        }else{                        
-            $('#back').hide();
-        }
-       }
-      
         /*gotop*/
         var $el = $(scrollableElement('html', 'body'));
         var speed = 550;
