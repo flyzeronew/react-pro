@@ -1,6 +1,7 @@
 import React from "react";
 import $ from 'jquery';
 import queryString from "query-string";
+
 export default class Myjs  extends React.Component {
     componentDidMount(){
 
@@ -12,22 +13,16 @@ export default class Myjs  extends React.Component {
             function header_go(){
                 $('.nav_inner_m li').each(function(i) {
                     $('.nav_inner_m li').removeClass('op');
-                    $('.nav_inner_m li').find('dl').hide();
-                    $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw2');
-                    $('.nav_inner_m li').eq(i).has('dl').addClass('arraw'); 
+                    $('.nav_inner_m li').find('.nav_sub').hide();
                                   
                     $(this).find('a').click(function() {                        
                         $(this).toggleClass('op');
                         if($(this).hasClass('op')){
-                                $('.nav_inner_m li').eq(i).find('dl').show();                                
-                                $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw');
-                                $('.nav_inner_m li').eq(i).has('dl').addClass('arraw2');
-                                
-                            }else{                               
-                                $('.nav_inner_m li').find('dl').hide();
-                                $('.nav_inner_m li').eq(i).has('dl').removeClass('arraw2');
-                                $('.nav_inner_m li').eq(i).has('dl').addClass('arraw');                             
-
+                                $('.nav_inner_m li').eq(i).find('.arraw img').css({transform:'rotate(180deg)'}); 
+                                $('.nav_inner_m li').eq(i).find('.nav_sub').show();                                
+                            }else{ 
+                                $('.nav_inner_m li').eq(i).find('.arraw img').css({transform:'rotate(0deg)'});                               
+                                $('.nav_inner_m li').find('.nav_sub').hide();
                             }
                     });
 
@@ -45,7 +40,7 @@ export default class Myjs  extends React.Component {
                 header_go();          
                 $('.nav_inner_m').css({'right':'-100%'});
                 $('.nav_bg').fadeOut(200);
-                $('.ham_close').fadeOut(200);
+                
 
             });
 
