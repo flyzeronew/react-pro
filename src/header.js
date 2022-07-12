@@ -58,8 +58,9 @@ class Header extends React.Component {
                         <button className="search_btn"><img src={searchbtn} alt="search_btn" title="search_btn"/></button>
                         <button className="ham"><img src={ham} alt="hamburger_selector"/></button>
                         <div className="search_page">
+                            <button class="search_close_btn"><img src={ham_close} alt="ham_close"/></button>                             
                             <div className="search_page_inner">
-                                <input className="search_page_input" type="search" placeholder="請輸入關鍵字"/>
+                                <input className="search_page_input" type="search" id="search_mobile" placeholder="請輸入關鍵字"/>
                                 <button id="search_button_mobile" className="search_page_btn">搜尋</button>
                             </div>
                         </div>

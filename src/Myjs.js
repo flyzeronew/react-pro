@@ -9,6 +9,8 @@ export default class Myjs  extends React.Component {
     
     // 漢堡
     $(document).ready(function(){ 
+
+        // google搜尋
         var cx = '002254347943719830775:s6buouardhq';
         var gcse = document.createElement('script');
         gcse.type = 'text/javascript';
@@ -49,7 +51,8 @@ export default class Myjs  extends React.Component {
                 }
             }
         });
-
+        // google搜尋 ed
+        // 手機漢堡執行
             function header_go(){
                 $('.nav_inner_m li').each(function(i) {
                     $('.nav_inner_m li a').removeClass('op');
@@ -71,7 +74,6 @@ export default class Myjs  extends React.Component {
 
                 });
             }
-
             $('.ham').click(function() {
                 header_go();
                 $('.ham_close').fadeIn(200);
@@ -82,13 +84,27 @@ export default class Myjs  extends React.Component {
             $('.ham_close').click(function() {
                 header_go();          
                 $('.nav_inner_m').css({'right':'-100%'});
-                $('.nav_bg').fadeOut(200);
+                $('.nav_bg').hide();
                 
 
             });
+           // 手機漢堡執行 ed
+           $('.header_search_m .search_btn').click(function() {
+                $('.header_search_m .search_page').css({right:0});
+                $('.nav_bg').show();            
+           });
+           $('.header_search_m .search_close_btn').click(function() {
+                $('.header_search_m .search_page').css({right:'-100%'});
+                $('.nav_bg').hide();            
+           });
+           
+           
+           // 手機搜尋框執行
+
+           // 手機搜尋框執行ed
 
     // 大首頁共用ed
-   
+
         $(window).scroll(function(){object_scroll(); });
         var header_h=$('.program_header').outerHeight(true);
         var lastScrollTop = 0;

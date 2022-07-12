@@ -324,6 +324,7 @@ nav{
     width: 100%;
     background: none;
     appearance: none;
+    background-image: url(../images/search_page_btn.svg);
     background-position: left 10px;
     background-repeat: no-repeat;
     border: none;
