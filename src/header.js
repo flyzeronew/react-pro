@@ -29,7 +29,7 @@ class Header extends React.Component {
 
         fetch('https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/portal_menu')
         .then(res => res.json())
-        .then(json => this.setState({           
+        .then(json => this.setState({
             portal_menu:json.portal_menu,
             
         }));
@@ -40,7 +40,9 @@ class Header extends React.Component {
 
   render () {
     return (
-        <div className="program_header">          
+        <div className="program_header">
+            <script async src="https://cse.google.com/cse.js?cx=f59bec45b33cb6c21"></script>
+            <div className="gcse-search"></div>
             <div className="main_header">
                 <div className="header_inner">
                     <h1 className="header_logo"><a href="https://www.tvbs.com.tw/" title="TVBS"><img src={tvbslogo} alt={this.props.logo}/></a></h1>                    

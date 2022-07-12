@@ -81,7 +81,6 @@ function Program_index() {
 
   return (
     <div className="program_container">
-
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>

@@ -12,8 +12,10 @@ export default class Myjs  extends React.Component {
         
             function header_go(){
                 $('.nav_inner_m li').each(function(i) {
-                    $('.nav_inner_m li').removeClass('op');
+                    $('.nav_inner_m li a').removeClass('op');
                     $('.nav_inner_m li').find('.nav_sub').hide();
+                    $('.nav_inner_m li').eq(i).find('.arraw img').css({transform:'rotate(0deg)'});
+                    
                                   
                     $(this).find('a').click(function() {                        
                         $(this).toggleClass('op');
@@ -23,6 +25,7 @@ export default class Myjs  extends React.Component {
                             }else{ 
                                 $('.nav_inner_m li').eq(i).find('.arraw img').css({transform:'rotate(0deg)'});                               
                                 $('.nav_inner_m li').find('.nav_sub').hide();
+                                $(this).removeClass('op');
                             }
                     });
 
