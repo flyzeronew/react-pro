@@ -9,7 +9,47 @@ export default class Myjs  extends React.Component {
     
     // 漢堡
     $(document).ready(function(){ 
-        
+        var cx = '002254347943719830775:s6buouardhq';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+        $('#search_button_mobile').click(function(){ 
+            $('button.gsc-search-button').click(); 
+        }); 
+        $("body").on('keyup','#search',function(){
+            if($(this).val()!='') {
+                $('#gsc-i-id1').val( $(this).val() );
+                $('#search_button,#search_button_mobile').click(function(){ $('button.gsc-search-button').click(); }); 
+            }
+        });
+
+        $("body").on('keyup','#search_mobile',function(event){
+            if( $(this).val()!='' ) {   
+                $('#gsc-i-id1').val( $(this).val() );
+                $('#search_button_mobile').click(function(){ $('button.gsc-search-button').click(); }); 
+                if(event.keyCode==13) {
+                    $("#search_mobile").blur();
+                }
+            }
+        });
+        $(document).on('keyup',function(event) {
+            if(event.keyCode==13) {
+                $('#gsc-i-id1').val('');
+                if( $('#search').val()!='' ) {
+                    var searchKey = $('#search').val();                            
+                } else {
+                    var searchKey = $('#search_mobile').val();
+                }
+                if( searchKey!='' ) { 
+                    $('#gsc-i-id1').val( searchKey );
+                    $('button.gsc-search-button').click();
+                }
+            }
+        });
+
             function header_go(){
                 $('.nav_inner_m li').each(function(i) {
                     $('.nav_inner_m li a').removeClass('op');

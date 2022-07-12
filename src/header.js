@@ -42,13 +42,15 @@ class Header extends React.Component {
     return (
         <div className="program_header">
             <script async src="https://cse.google.com/cse.js?cx=f59bec45b33cb6c21"></script>
-            <div className="gcse-search"></div>
+            <div className="google-search">
+                <div className="gcse-search"></div>
+            </div>
             <div className="main_header">
                 <div className="header_inner">
                     <h1 className="header_logo"><a href="https://www.tvbs.com.tw/" title="TVBS"><img src={tvbslogo} alt={this.props.logo}/></a></h1>                    
                     <div className="header_search_pc">
-                        <input className="search_input" type="search" placeholder="關鍵字"/>
-                        <button class="search_btn"><img src={searchbtn} alt="search_btn" title="search_btn"/></button>
+                        <input className="search_input" type="search" id="search" placeholder="關鍵字"/>
+                        <button class="search_btn" id="search_button"><img src={searchbtn} alt="search_btn" title="search_btn"/></button>
                         <a class="en_page" href="https://www.tvbs.com.tw/ours/en" target="_new">EN</a>                        
                     </div>
 
@@ -58,7 +60,7 @@ class Header extends React.Component {
                         <div className="search_page">
                             <div className="search_page_inner">
                                 <input className="search_page_input" type="search" placeholder="請輸入關鍵字"/>
-                                <button className="search_page_btn">搜尋</button>
+                                <button id="search_button_mobile" className="search_page_btn">搜尋</button>
                             </div>
                         </div>
                     </div>
