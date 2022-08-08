@@ -101,7 +101,7 @@ function Program_index() {
         <div className="height20px"></div>
         <div className="program_ad_box">
             <div className="ad_970x250_pc">
-              <DFPSlotsProvider dfpNetworkId={''} adUnit="21697024903,31610311/news.tvbs.com.tw_pc_index_top">
+              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
               <AdSlot sizes={[[970,250],[1,1]]} />
               </DFPSlotsProvider>
               {/* <img src={ad_top} alt={ad_img}/> */}
