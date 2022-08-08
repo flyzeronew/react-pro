@@ -14,7 +14,6 @@ import queryString from "query-string";
 import Footer from './../components/Footer.js';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 
-
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
 
@@ -84,22 +83,6 @@ function Program_index() {
   return (
     <div className="program_container">   
 
-
-<DFPSlotsProvider>
-         ...
-         <AdSlot adUnit="home/leaderboard" sizes={[ [900, 90], [728, 90]]} />
-         ...
-         /* you can override the props */
-         <AdSlot adUnit="home/mobile" sizes={[ [300, 250], [300, 600]]} />
-         ...
-         <div>
-           ...
-           <AdSlot adUnit="home/footer" sizes={[ [300, 250], [300, 600]]} />
-           ...
-         </div>
-         ...
-       </DFPSlotsProvider>
-       
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
@@ -118,7 +101,10 @@ function Program_index() {
         <div className="height20px"></div>
         <div className="program_ad_box">
             <div className="ad_970x90_pc">
-              <img src={ad_top} alt={ad_img}/>
+              <DFPSlotsProvider>
+              <AdSlot adUnit="news.tvbs.com.tw_pc_index_top" sizes={[ [970, 250], [1, 1]]} />
+              </DFPSlotsProvider>
+              {/* <img src={ad_top} alt={ad_img}/> */}
             </div>
             <div className="ad_320x100_mo">
               <img src={ad_top_m} alt={ad_img}/>
