@@ -100,7 +100,7 @@ function Program_index() {
       <main>      
         <div className="height20px"></div>
         <div className="program_ad_box">
-            <div className="ad_970x90_pc">
+            <div className="ad_970x250_pc">
               <DFPSlotsProvider dfpNetworkId={''} adUnit="21697024903,31610311/news.tvbs.com.tw_pc_index_top">
               <AdSlot sizes={[[970,250],[1,1]]} />
               </DFPSlotsProvider>
