@@ -12,6 +12,8 @@ import './../css/program_master.css';
 import './../css/program_article_share.css';
 import queryString from "query-string";
 import Footer from './../components/Footer.js';
+import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+
 
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
@@ -82,6 +84,22 @@ function Program_index() {
   return (
     <div className="program_container">   
 
+
+<DFPSlotsProvider>
+         ...
+         <AdSlot adUnit="home/leaderboard" sizes={[ [900, 90], [728, 90]]} />
+         ...
+         /* you can override the props */
+         <AdSlot adUnit="home/mobile" sizes={[ [300, 250], [300, 600]]} />
+         ...
+         <div>
+           ...
+           <AdSlot adUnit="home/footer" sizes={[ [300, 250], [300, 600]]} />
+           ...
+         </div>
+         ...
+       </DFPSlotsProvider>
+       
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
