@@ -167,11 +167,11 @@ function Program_index() {
                     ))}
 
                 <li>
-                    <div className="program_content_ad_box">
+                    
                       <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
                         <AdSlot sizes={[[300,250],[1,1]]} />
                       </DFPSlotsProvider>
-                    </div>
+                  
                 </li>
               </div>
           </div>
