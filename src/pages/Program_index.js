@@ -166,15 +166,12 @@ function Program_index() {
                     </li>
                     ))}
 
-              {/* 下面這塊差廣告 */}
                 <li>
-                  <a href="#">
-                    <div className="program_content_main_information2_img">
-                        <div className="mask"></div>
-                        <img src={kv_img} alt={img}/>
+                    <div className="program_content_ad_box">
+                      <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
+                        <AdSlot sizes={[[300,250],[1,1]]} />
+                      </DFPSlotsProvider>
                     </div>
-                    <p className="font24_1">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</p>
-                  </a>
                 </li>
               </div>
           </div>
