@@ -12,6 +12,8 @@ import './../css/program_master.css';
 import './../css/program_article_share.css';
 import queryString from "query-string";
 import Footer from './../components/Footer.js';
+import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
 
@@ -97,13 +99,19 @@ function Program_list() {
       <main>      
         <div className="height20px"></div>
         <div className="program_ad_box">
-            <div className="ad_970x90_pc">
-              <img src={ad_top} alt={ad_img}/>
-            </div>
-            <div className="ad_320x100_mo">
-              <img src={ad_top_m} alt={ad_img}/>
-            </div>
-        </div>
+          <div className="ad_970x250_pc">
+                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
+                <AdSlot sizes={[[970,250],[1,1]]} />
+                </DFPSlotsProvider>
+                {/* <img src={ad_top} alt={ad_img}/> */}
+              </div>
+              <div className="ad_320x100_mo">
+                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
+                <AdSlot sizes={[[320,100],[1,1]]} />
+                </DFPSlotsProvider>
+                {/* <img src={ad_top_m} alt={ad_img}/> */}
+              </div>
+          </div>
         <div className="height20px"></div>
         <div className="program_content">
           <div className="program_content_main">
@@ -127,78 +135,7 @@ function Program_list() {
                   </a>
                     </li>
                     ))}
-                      {/* <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li> */}
+                      
                     </ul>
                   </div>
 
@@ -222,10 +159,24 @@ function Program_list() {
           <div className="program_content_right">
 
             <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
-            
+            <div className="program_content_right_ad_box">
+             
+              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_list1">
+              <AdSlot sizes={[[300,250],[1,1]]} />
+              </DFPSlotsProvider>
+           
+            </div>
             <div className="program_content_right_fb_box">
               <Iframe iframe={iframe_fb}/>
             </div>
+
+            <div className="program_content_right_ad_box">
+             
+             <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_list2">
+             <AdSlot sizes={[[300,250],[1,1]]} />
+             </DFPSlotsProvider>
+          
+           </div>
 
           </div>
         </div>
