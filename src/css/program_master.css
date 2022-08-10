@@ -210,7 +210,7 @@ p{text-align:left;}
 /*2欄ed*/
 
 /*3欄*/
-.program_content_main_information2 li{width:382px; margin-right:20px;display:inline-block;overflow:hidden;margin-bottom:20px;vertical-align: text-top;}
+.program_content_main_information2 li{width:382px; margin-right:20px;display:inline-block;overflow:hidden;margin-bottom:20px;vertical-align: text-top;text-align: center;}
 .program_content_main_information2_img{height:210px;overflow:hidden;margin-bottom:5px;position: relative;}
 .program_content_main_information2 li a:hover p{color: #933571;}
 .program_content_main_information2 li a:hover .mask{background-color: rgba(0,0,0,0.4);transition: 0.3s;}
