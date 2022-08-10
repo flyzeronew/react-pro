@@ -12,12 +12,16 @@ import './../css/program_master.css';
 import './../css/program_article_share.css';
 import queryString from "query-string";
 import Footer from './../components/Footer.js';
+import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+import ReactPaginate from 'react-paginate';
+
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
 
 let img = 'img';
 let ad_img = 'ad_img';
 let logo = 'logo';
+
 
 function Program_list() {
     const [loading, setLoading] = useState('')
@@ -27,6 +31,9 @@ function Program_list() {
     const [program_info, setProgram_info] = useState('')
     const [relative_news, setRelative_news] = useState('')
     const [articles, setArticles] = useState('')
+    const [pageCount, setPageCount] = useState(0)
+    const [offset, setOffset] = useState(0)
+    const [perPage] = useState(10);
     
     //多組api fetch
     const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords"];
@@ -44,26 +51,28 @@ function Program_list() {
       setRelative_news(result5.data.slice(0,2))
     };
 
-    const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list"];
+    const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list","https://tvbsapp.tvbs.com.tw/program_api/wonderful_pages"];
     const getDataFromServer2 = async () => {
       setLoading(true);
-      const [result1] = await Promise.all(
-        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=5&page=0").then((res) => res.json()))
+         const [result1,result2] = await Promise.all(        
+        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=12&page="+offset).then((res) => res.json()))
      );
       setLoading(false);
       setArticles(result1.data);
-
-      console.log(articles);
+      setPageCount(result2.data.length)
+      
     };
 
-
-
-
+const handlePageClick = (e) => {
+  const selectedPage = e.selected;
+  setOffset(selectedPage + 1)
+};
+console.log(handlePageClick);
     // 模擬componentDidMount
     useEffect(() => {
         getDataFromServer()
         getDataFromServer2()
-    }, [])
+    }, [offset])
 
     //fb iframe
     let fb_url=social.facebook;
@@ -79,7 +88,7 @@ function Program_list() {
 
   return (
     <div className="program_container">
-
+       
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
@@ -97,13 +106,19 @@ function Program_list() {
       <main>      
         <div className="height20px"></div>
         <div className="program_ad_box">
-            <div className="ad_970x90_pc">
-              <img src={ad_top} alt={ad_img}/>
-            </div>
-            <div className="ad_320x100_mo">
-              <img src={ad_top_m} alt={ad_img}/>
-            </div>
-        </div>
+          <div className="ad_970x250_pc">
+                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
+                <AdSlot sizes={[[970,250],[1,1]]} />
+                </DFPSlotsProvider>
+                {/* <img src={ad_top} alt={ad_img}/> */}
+              </div>
+              <div className="ad_320x100_mo">
+                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
+                <AdSlot sizes={[[320,100],[1,1]]} />
+                </DFPSlotsProvider>
+                {/* <img src={ad_top_m} alt={ad_img}/> */}
+              </div>
+          </div>
         <div className="height20px"></div>
         <div className="program_content">
           <div className="program_content_main">
@@ -116,98 +131,46 @@ function Program_list() {
               <div className="program_content_main_information_box1">
                   <div className="program_content_main_information">
                     <ul>
+                    {Array.from(articles).map((item, index) => (
                       <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#">
-                          <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
-                          <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                        </a>
-                      </li>
+                        <a href={`/reveiew/article/`+item.id}>
+                          <div className="program_content_main_information_img">
+                              <div className="mask"></div>
+                              <img src={item.cover_image} alt={img}/>
+                          </div>
+                        <p className="font18_1">{item.title}</p>
+                  </a>
+                    </li>
+                    ))}
+                      
                     </ul>
                   </div>
 
                   <div className="jump_list pc_display">
-                    <ul>
-                        <li><a href="#">最前頁</a></li>
-                        <li><a href="#">上一頁</a></li>
-                        <li className="act"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">下一頁</a></li>
-                        <li><a href="#">最前頁</a></li>
-                        <li class="jump_list_number">1/463</li>
-                        <li class="jump_list_number2">1</li>
-                        <li><a href="#">Go</a></li>
-                     </ul>
+                      <ReactPaginate
+                        previousLabel={"上一頁"}
+                        nextLabel={"下一頁"}
+                        breakLabel={"..."}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={5}
+                        containerClassName={"jump_list"}
+                        activeClassName={"act"}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                      />                      
+                  </div>
+
+                  <div className="jump_list mobile_display">
+                      <ReactPaginate
+                        previousLabel={"上一頁"}
+                        nextLabel={"下一頁"}                
+                        marginPagesDisplayed={0}
+                        pageRangeDisplayed={0}
+                        containerClassName={"jump_list"}
+                        activeClassName={"act"}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                      />                      
                   </div>
               </div>
           </div>
@@ -215,10 +178,24 @@ function Program_list() {
           <div className="program_content_right">
 
             <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
-            
+            <div className="program_content_right_ad_box">
+             
+              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_read_r1">
+              <AdSlot sizes={[[300,250]]} />
+              </DFPSlotsProvider>
+           
+            </div>
             <div className="program_content_right_fb_box">
               <Iframe iframe={iframe_fb}/>
             </div>
+
+            <div className="program_content_right_ad_box">
+             
+             <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_read_r2">
+             <AdSlot sizes={[[300,600]]} />
+             </DFPSlotsProvider>
+          
+           </div>
 
           </div>
         </div>
