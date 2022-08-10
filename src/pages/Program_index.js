@@ -12,6 +12,7 @@ import './../css/program_master.css';
 import './../css/program_article_share.css';
 import queryString from "query-string";
 import Footer from './../components/Footer.js';
+ import { Gpt } from 'react-gpt-ads';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
@@ -100,16 +101,30 @@ function Program_index() {
       <main>      
         <div className="height20px"></div>
         <div className="program_ad_box">
-            <div className="ad_970x250_pc">
-              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
+            <div className="ad_970x250_pc" id="div-gpt-ad-1484649371125-55">
+            <Gpt 
+        adUnit="31610311/v4_focus_index_970x90"
+        name="div-gpt-ad-1484649371125-55"
+        size={[[1,1],[970, 90], [970, 250], [728, 90]]}
+    />
+            {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
+            {/* <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90" divid='div-gpt-ad-1484649371125-55'>
+              <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
+              </DFPSlotsProvider> */}
+              {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
               <AdSlot sizes={[[970,250],[1,1]]} />
-              </DFPSlotsProvider>
+              </DFPSlotsProvider> */}
               {/* <img src={ad_top} alt={ad_img}/> */}
             </div>
             <div className="ad_320x100_mo">
-              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
+            {/* <App /> */}
+            {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
+            {/* <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90"  divid='ad_320x100_mo'>
+              <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
+              </DFPSlotsProvider> */}
+              {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
               <AdSlot sizes={[[320,100],[1,1]]} />
-              </DFPSlotsProvider>
+              </DFPSlotsProvider> */}
               {/* <img src={ad_top_m} alt={ad_img}/> */}
             </div>
         </div>
