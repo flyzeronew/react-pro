@@ -89,7 +89,7 @@
 	letter-spacing:0px; font-size:15px; color:#666666;width:auto;height:auto;margin:0px; display:inline;
     vertical-align:middle;
 }
-.jump_list li a{display:block;color:#666666; padding:7px 14px; margin-right:0;border:#dddddd solid 1px;border-left:0px;float:left;vertical-align: middle; }
+.jump_list li a{display:block;color:#666666; padding:7px 14px; margin-right:0;border:#dddddd solid 1px;border-left:0px;float:left;vertical-align: middle;cursor: pointer; }
 .jump_list li a:hover,.jump_list li.act a{color:#FFF;background-color:#933571;}
 .jump_list li:first-child a{border-radius:5px 0 0 5px;border-left:#dddddd solid 1px;padding:6px 14px;}
 .jump_list li:last-child a{border-radius:0 5px 5px 0;border-right:#dddddd solid 1px;padding:6px 14px;}
