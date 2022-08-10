@@ -83,43 +83,16 @@
 /*靠左靠右 ed*/
 
 /*跳頁列*/
-.jump_list{margin:0 auto;display:inline-block;}
+.jump_list{}
+.jump_list ul{display:flex;align-items:center;justify-content:center;}
 .jump_list li,.jump_list_up_down li{
 	letter-spacing:0px; font-size:15px; color:#666666;width:auto;height:auto;margin:0px; display:inline;
     vertical-align:middle;
 }
 .jump_list li a{display:block;color:#666666; padding:7px 14px; margin-right:0;border:#dddddd solid 1px;border-left:0px;float:left;vertical-align: middle; }
-.jump_list li:nth-child(1) a{border-left:#dddddd solid 1px; border-radius:10px 0 0 10px; padding:7px 13px;}
-.jump_list li:nth-child(2) a{padding:7px 13px;}
-
-.jump_list li:nth-last-child(4) a{padding:7px 13px;border-radius:0 10px 10px 0;}
-.jump_list li:nth-last-child(5) a{padding:7px 13px;}
-.jump_list li:last-child a{ margin-left:5px; padding:7px 13px;border:#dddddd solid 1px;border-radius:10px}
 .jump_list li a:hover,.jump_list li.act a{color:#FFF;background-color:#933571;}
-
-.jump_list_number,.jump_list_number2,.jump_list_number3{display:inline;padding:7px 13px;float:left;color:#666666;}
-.jump_list_number2{border:#dddddd solid 1px;border-radius:10px; margin-left:5px;}
-
-/*上下頁*/
-
-.jump_list_up_down li{font-size:15px;display:inline-block;}
-.jump_list_up_down li a{display:block;padding:10px 20px;color:#FFF;background-color:#933571; margin-right:5px;border-radius:10px;}
-.jump_list_up_down li a:hover{background-color:#933571; transition:0.3s;}
-/*上下頁 ed*/
-
-/*上下頁2*/
-.jump_list_up_down2 li{font-size:15px;display:inline-block;margin-bottom:10px; width:100%; overflow:hidden;}
-.jump_list_up_down2 li a{ 
-	font-size:16px;padding:0 20px;overflow:hidden;background-image:url(../images/arraw02-L.svg);
-	display:block;padding:10px 20px;color:#000;background-color:#c8c9cb; margin-right:5px;  background-repeat:no-repeat; background-size:15px; background-position:1% center;
-}
-.jump_list_up_down2 li a p{padding:0 10px; overflow:hidden;white-space : nowrap; width:80%;}
-
-.jump_list_up_down2 li:nth-child(2) a{background-image:url(../images/arraw02-R.svg); background-repeat:no-repeat;background-position:99% center;}
-.jump_list_up_down2 li a:hover{color:#FFF;background-color:#933571; transition:0.3s;}
-
-/*上下頁2 ed*/
-
+.jump_list li:first-child a{border-radius:5px 0 0 5px;border-left:#dddddd solid 1px;padding:6px 14px;}
+.jump_list li:last-child a{border-radius:0 5px 5px 0;border-right:#dddddd solid 1px;padding:6px 14px;}
 /*跳頁列 ed*/
 
 /*PC手機版隱藏*/

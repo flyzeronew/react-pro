@@ -48,7 +48,7 @@ function Program_list() {
     const getDataFromServer2 = async () => {
       setLoading(true);
       const [result1] = await Promise.all(
-        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=5&page=0").then((res) => res.json()))
+        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=12&page=1").then((res) => res.json()))
      );
       setLoading(false);
       setArticles(result1.data);
@@ -116,7 +116,18 @@ function Program_list() {
               <div className="program_content_main_information_box1">
                   <div className="program_content_main_information">
                     <ul>
+                    {Array.from(articles).map((item, index) => (
                       <li>
+                        <a href={`/reveiew/article/`+item.id}>
+                          <div className="program_content_main_information_img">
+                              <div className="mask"></div>
+                              <img src={item.cover_image} alt={img}/>
+                          </div>
+                        <p className="font18_1">{item.title}</p>
+                  </a>
+                    </li>
+                    ))}
+                      {/* <li>
                         <a href="#">
                           <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
                           <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
@@ -187,13 +198,12 @@ function Program_list() {
                           <div className="program_content_main_information_img"><img src={kv_img} alt={img}/></div>
                           <p className="font18_1"><a href="##">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
                         </a>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
 
                   <div className="jump_list pc_display">
-                    <ul>
-                        <li><a href="#">最前頁</a></li>
+                    <ul>                   
                         <li><a href="#">上一頁</a></li>
                         <li className="act"><a href="#">1</a></li>
                         <li><a href="#">2</a></li>
@@ -203,10 +213,7 @@ function Program_list() {
                         <li><a href="#">6</a></li>
                         <li><a href="#">7</a></li>
                         <li><a href="#">下一頁</a></li>
-                        <li><a href="#">最前頁</a></li>
-                        <li class="jump_list_number">1/463</li>
-                        <li class="jump_list_number2">1</li>
-                        <li><a href="#">Go</a></li>
+
                      </ul>
                   </div>
               </div>
