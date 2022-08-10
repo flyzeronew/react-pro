@@ -54,8 +54,7 @@ function Program_list() {
     const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list","https://tvbsapp.tvbs.com.tw/program_api/wonderful_pages"];
     const getDataFromServer2 = async () => {
       setLoading(true);
-         const [result1,result2] = await Promise.all(
-        
+         const [result1,result2] = await Promise.all(        
         urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=12&page="+offset).then((res) => res.json()))
      );
       setLoading(false);
@@ -148,19 +147,31 @@ console.log(handlePageClick);
                   </div>
 
                   <div className="jump_list pc_display">
-                    <ReactPaginate
-                      previousLabel={"上一頁"}
-                      nextLabel={"下一頁"}
-                      breakLabel={"..."}
-                      marginPagesDisplayed={1}
-                      pageRangeDisplayed={5}
-                      containerClassName={"jump_list"}
-                      activeClassName={"act"}
-                      pageCount={pageCount}
-                      onPageChange={handlePageClick}
-                    />
-                      
-                    </div>
+                      <ReactPaginate
+                        previousLabel={"上一頁"}
+                        nextLabel={"下一頁"}
+                        breakLabel={"..."}
+                        marginPagesDisplayed={1}
+                        pageRangeDisplayed={5}
+                        containerClassName={"jump_list"}
+                        activeClassName={"act"}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                      />                      
+                  </div>
+
+                  <div className="jump_list mobile_display">
+                      <ReactPaginate
+                        previousLabel={"上一頁"}
+                        nextLabel={"下一頁"}                
+                        marginPagesDisplayed={0}
+                        pageRangeDisplayed={0}
+                        containerClassName={"jump_list"}
+                        activeClassName={"act"}
+                        pageCount={pageCount}
+                        onPageChange={handlePageClick}
+                      />                      
+                  </div>
               </div>
           </div>
 
