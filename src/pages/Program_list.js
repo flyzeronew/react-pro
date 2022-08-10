@@ -161,8 +161,8 @@ function Program_list() {
             <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
             <div className="program_content_right_ad_box">
              
-              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_list1">
-              <AdSlot sizes={[[300,250],[1,1]]} />
+              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
+              <AdSlot sizes={[[300,250]]} />
               </DFPSlotsProvider>
            
             </div>
@@ -172,8 +172,8 @@ function Program_list() {
 
             <div className="program_content_right_ad_box">
              
-             <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_list2">
-             <AdSlot sizes={[[300,250],[1,1]]} />
+             <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list2">
+             <AdSlot sizes={[[300,250],[300,600]]} />
              </DFPSlotsProvider>
           
            </div>
