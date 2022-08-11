@@ -101,19 +101,19 @@ function Program_index() {
       <main>      
         <div className="height20px"></div>
         <div className="program_ad_box">
-            <div className="ad_970x250_pc" id="div-gpt-ad-1484649371125-55">
-            <Gpt 
+            <div className="ad_970x250_pc" id="adSlot-0">
+            {/* <Gpt 
         adUnit="31610311/v4_focus_index_970x90"
         name="div-gpt-ad-1484649371125-55"
         size={[[1,1],[970, 90], [970, 250], [728, 90]]}
-    />
+    /> */}
             {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
-            {/* <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90" divid='div-gpt-ad-1484649371125-55'>
+            <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90">
               <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
-              </DFPSlotsProvider> */}
+              </DFPSlotsProvider> 
               {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
               <AdSlot sizes={[[970,250],[1,1]]} />
-              </DFPSlotsProvider> */}
+              </DFPSlotsProvider>
               {/* <img src={ad_top} alt={ad_img}/> */}
             </div>
             <div className="ad_320x100_mo">
