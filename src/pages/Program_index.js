@@ -160,7 +160,7 @@ function Program_index() {
               <div className="program_content_main_information_titel">
                   <p className="program_content_main_information_titel_p font30_1">精彩內容</p>
                   <div className="program_content_main_information_titel_more">
-                    <div className="more01"><a className="font15_1" href={get_id+'/list'}>MORE</a></div>
+                    <div className="more01"><a className="font15_1" href={"list'}>MORE</a></div>
                   </div>
                   <div className="line01"></div>
               </div>
