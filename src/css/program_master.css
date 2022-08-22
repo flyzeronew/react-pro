@@ -375,7 +375,7 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 /* 網頁內頁 */
 .program_content_main_detail{}
 .program_content_main_detail_titel{margin-bottom:10px;}
-.program_content_main_detail_time{width:0; background-image:url(../images/icon_time.svg); background-position:left center;background-size:15px; background-repeat:no-repeat; padding-left:22px;margin-bottom:20px;}
+.program_content_main_detail_time{background-image:url(../images/icon_time.svg); background-position:left center;background-size:15px; background-repeat:no-repeat; padding-left:22px;margin-bottom:20px;}
 .program_content_main_detail_context{}
 .program_content_main_detail_context_img{margin-bottom:20px;}
 .program_content_main_detail_context p{margin-bottom:20px; line-height:32px;}.program_content_main_detail_context p a{ color:#ce1a79;}
@@ -390,6 +390,7 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 .program_content_main_detail_label_titel_list{margin-top:8px;float:left; display:block;}
 .program_content_main_detail_label_titel_list li{ display:inline-block; margin-bottom:10px;}
 .program_content_main_detail_label_titel_list li a{padding:5px 5px;border-radius:30px;}.program_content_main_detail_label_titel_list li a:hover{ background-color:#933571; color:rgba(253,252,252,1.00);}
+.program_content_main_detail_label_titel_list li button{padding:5px 10px;border-radius:30px;margin-right:10px;border:none;cursor: pointer;}.program_content_main_detail_label_titel_list li button:hover{ background-color:#933571; color:rgba(253,252,252,1.00);}
 /* 標籤連結 ed */
 
 /* 你可能也會喜歡 */
@@ -593,7 +594,7 @@ background-size:11px; background-repeat:no-repeat; background-position:6px 16px;
 }
 /* RWD響應式在下面----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ed*/	
 /* PC上下頁文章 */
-.program_content_updown_page_box{position:absolute; left:-120px; top:220px;z-index:2;}
+.program_content_updown_page_box{position:absolute;left:-120px;z-index:2;}
 .program_content_updown_page{position:fixed; width:1200px;}
 .program_content_updown_page ul{position:relative;}
 .program_content_updown_page li{
