@@ -214,7 +214,7 @@ function Program_index() {
                     <div className="program_content_main_information_titel">
                         <p className="program_content_main_information_titel_p font30_1">節目資訊</p>
                         <div className="program_content_main_information_titel_more">
-                            <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                            {/* <div className="more01"><a className="font15_1" href="#">MORE</a></div> */}
                         </div>
                         <div className="line01"></div>
                     </div>
@@ -234,7 +234,7 @@ function Program_index() {
                 <div className="program_content_main_information_titel">
                   <p className="program_content_main_information_titel_p font30_1">相關新聞</p>
                   <div className="program_content_main_information_titel_more">
-                  <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                  {/* <div className="more01"><a className="font15_1" href="#">MORE</a></div> */}
                   </div>
                   <div className="line01"></div>
                 </div>
