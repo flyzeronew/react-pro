@@ -156,7 +156,7 @@ class Header extends React.Component {
                 </div>
 
 
-                <div class="program_header_titel font26_1"><a href={this.state.url}>{this.state.title}</a></div>
+                <div class="program_header_titel font26_1"><a href={this.props.get_id}>{this.state.title}</a></div>
                 <div className="program_header_nav">
                     <ul className="font20_1">
                         {
