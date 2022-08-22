@@ -180,7 +180,7 @@ function Program_index() {
                 {/* 文章url看樣子，可能還要再思考一下路由*/}
                 {Array.from(articles).map((item, index) => (
                       <li>
-                      <a href={`/reveiew/article/`+item.id}>
+                      <a href={`detail/`+item.id}>
                     <div className="program_content_main_information2_img">
                         <div className="mask"></div>
                         <img src={item.cover_image} alt={img}/>
