@@ -162,10 +162,10 @@ class Header extends React.Component {
                         {
                             this.state.menu.length == 0
                             ? 'Loading menu...'
-                            : this.state.menu.map(key => (
-                            <li key={key.id}>
-                            <a href={key.url}>{key.title}</a>
-                            </li>
+                            : this.state.menu.map((key, index) => (
+                                index == 0 ?
+                                 <li key={key.id}> <a href={this.props.get_id+'/list'} >{key.title}</a> </li>
+                                 :<li key={key.id}> <a href={key.url}>{key.title}</a> </li>
                             ))
                         }
                     </ul>
