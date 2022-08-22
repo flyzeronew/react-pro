@@ -101,13 +101,24 @@ function Program_index() {
       <main>      
         <div className="height20px"></div>
         <div className="program_ad_box">
+              <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_incover">
+                <AdSlot sizes={[[1,1]]} />
+              </DFPSlotsProvider> 
+              <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_m_index_incover">
+                <AdSlot sizes={[[1,1]]} />
+              </DFPSlotsProvider> 
+              <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_m_index_inflip">
+                <AdSlot sizes={[[1,1]]} />
+              </DFPSlotsProvider> 
+              <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_inpage">
+                <AdSlot sizes={[[1,1]]} />
+              </DFPSlotsProvider> 
+
+
+
+
+
             <div className="ad_970x250_pc" id="adSlot-0">
-            {/* <Gpt 
-        adUnit="31610311/v4_focus_index_970x90"
-        name="div-gpt-ad-1484649371125-55"
-        size={[[1,1],[970, 90], [970, 250], [728, 90]]}
-    /> */}
-            {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
             <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90">
               <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
               </DFPSlotsProvider> 
@@ -117,11 +128,9 @@ function Program_index() {
               {/* <img src={ad_top} alt={ad_img}/> */}
             </div>
             <div className="ad_320x100_mo">
-            {/* <App /> */}
-            {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
-            {/* <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90"  divid='ad_320x100_mo'>
-              <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
-              </DFPSlotsProvider> */}
+            <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_m_index_320x100">
+              <AdSlot sizes={[[1,1],[320, 100]]} />
+              </DFPSlotsProvider> 
               {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
               <AdSlot sizes={[[320,100],[1,1]]} />
               </DFPSlotsProvider> */}
@@ -182,10 +191,18 @@ function Program_index() {
                     ))}
 
                 <li>
-                    
-                      <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
-                        <AdSlot sizes={[[300,250],[1,1]]} />
+
+                       <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_superrec_top">
+                        <AdSlot sizes={[[1,1],[300, 250], [300, 600]]} />
                       </DFPSlotsProvider>
+
+                      <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_m_index_superrec">
+                        <AdSlot sizes={[[1,1],[320, 100], [320, 200], [300, 250]]} />
+                      </DFPSlotsProvider>
+                    
+                      {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
+                        <AdSlot sizes={[[300,250],[1,1]]} />
+                      </DFPSlotsProvider> */}
                   
                 </li>
               </div>
