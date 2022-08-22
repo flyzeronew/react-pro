@@ -133,7 +133,7 @@ console.log(handlePageClick);
                     <ul>
                     {Array.from(articles).map((item, index) => (
                       <li>
-                        <a href={`/reveiew/article/`+item.id}>
+                        <a href={`detail/`+item.id}>
                           <div className="program_content_main_information_img">
                               <div className="mask"></div>
                               <img src={item.cover_image} alt={img}/>
