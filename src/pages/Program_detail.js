@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import Header from './../header';
+import Like from './../like';
 import {Helmet} from "react-helmet";
 import Myjs from './../Myjs';
 import gotop from './../images/gotop.png';
-import ad_top from './../images/ad970x90.jpg';
-import ad_top_m from './../images/ad320x100.jpg';
 import ad_300x250 from './../images/ad300x250.jpg';
 import ad_650x100 from './../images/ad650x100.jpg';
 import facebook_img from './../images/content_community_list_facebook.svg';
 import talk_img from './../images/content_community_list_talk.svg';
-import kv_img from './../images/kv850x470.jpg';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './../css/program_master.css';
 import './../css/program_article_share.css';
-import queryString from "query-string";
 import Footer from './../components/Footer.js';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import $ from 'jquery';
@@ -39,6 +36,8 @@ function Program_detail() {
     const [menu,setMenu] = useState('')
     const [prev,setPrev] = useState('')
     const [next,setNext] = useState('')
+    const [like,setLike] = useState('')
+
     //多組api fetch
     const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords","https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu"];
 
@@ -67,22 +66,21 @@ function Program_detail() {
       setDetail(result1.data[0]);
     };
     // 抓內頁 資料ed
-     // 抓上一頁 資料
-     const urls3 =["https://tvbsapp.tvbs.com.tw/program_api/next_prev_article"];
-     const getDataFromServer3 = async () => {
-       setLoading(true);
-       const [result1] = await Promise.all(
-         urls3.map((url) => fetch(url+"?tbl=6&type=gt&id="+get_detail_id).then((res) => res.json()))
-       );
-       const [result2] = await Promise.all(
-         urls3.map((url2) => fetch(url2+"?tbl=6&type=st&id="+get_detail_id).then((res) => res.json()))
-       );
-       setLoading(false);
-       setPrev(result1.data[0]);
-       setNext(result2.data[0]);
-     };
-      // 抓上一頁 資料ed
-      
+    // 抓上一頁 資料
+    const urls3 =["https://tvbsapp.tvbs.com.tw/program_api/next_prev_article"];
+    const getDataFromServer3 = async () => {
+      setLoading(true);
+      const [result1] = await Promise.all(
+        urls3.map((url) => fetch(url+"?tbl=6&type=gt&id="+get_detail_id).then((res) => res.json()))
+      );
+      const [result2] = await Promise.all(
+        urls3.map((url2) => fetch(url2+"?tbl=6&type=st&id="+get_detail_id).then((res) => res.json()))
+      );
+      setLoading(false);
+      setPrev(result1.data[0]);
+      setNext(result2.data[0]);
+    };
+    // 抓上一頁 資料ed
  
     // 模擬componentDidMount
     useEffect(() => {
@@ -108,7 +106,7 @@ function Program_detail() {
     // 關鍵字轉換及搜尋 ed
   return (
     <div className="program_container">
-      
+
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
@@ -291,31 +289,8 @@ function Program_detail() {
                 <img src={ad_300x250}  alt={ad_img}/>
               </div>
 
-              <div className="height20px"></div>
-              <div className="height20px"></div>
-              
-              <div className="program_content_main_detail_like">
-                <div className="program_content_main_detail_like_titel font24_1">你可能也會喜歡</div>
-                <div className="program_content_main_information3">
-                  <ul>
-                    <li>
-                      <a href="##"><div className="program_content_main_information3_img"><img src={kv_img} alt={img}/></div>
-                        <p class="font18_1"><a href="#">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="##"><div className="program_content_main_information3_img"><img src={kv_img} alt={img}/></div>
-                        <p class="font18_1"><a href="#">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="##"><div className="program_content_main_information3_img"><img src={kv_img} alt={img}/></div>
-                        <p class="font18_1"><a href="#">1.女人我最大商品資訊女人我最大商品資訊女人我最大商品資訊</a></p>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <div className="height20px"></div>              
+              <Like img={img} get_id={get_id} get_detail_id={get_detail_id}/>
             </div>
           </div>
 

@@ -103,7 +103,7 @@
 .jump_list_up_down2 li a p{padding:0 10px; overflow:hidden;white-space : nowrap; width:80%;}
 
 .jump_list_up_down2 li:nth-child(2) a{background-image:url(../images/arraw02-R.svg); background-repeat:no-repeat;background-position:99% center;}
-.jump_list_up_down2 li a:hover{color:#FFF;background-color:#db0277; transition:0.3s;}
+.jump_list_up_down2 li a:hover{color:#FFF;background-color:#933571; transition:0.3s;}
 /*上下頁2 ed*/
 /*PC手機版隱藏*/
 .all_display{display:none;}
