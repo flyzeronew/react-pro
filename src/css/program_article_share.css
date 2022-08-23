@@ -94,13 +94,26 @@
 .jump_list li:first-child a{border-radius:5px 0 0 5px;border-left:#dddddd solid 1px;padding:6px 14px;}
 .jump_list li:last-child a{border-radius:0 5px 5px 0;border-right:#dddddd solid 1px;padding:6px 14px;}
 /*跳頁列 ed*/
+/*上下頁2*/
+.jump_list_up_down2{}
+.jump_list_up_down2 li{font-size:15px;display:inline-block;margin-bottom:10px; width:100%; overflow:hidden;}
+.jump_list_up_down2 li a{ font-size:16px;padding:0 20px;overflow:hidden;
+	display:block;padding:10px 20px;color:#000;background-color:#c8c9cb; margin-right:5px; background-image:url(../images/arraw02-L.svg); background-repeat:no-repeat; background-size:15px; background-position:1% center;
+}
+.jump_list_up_down2 li a p{padding:0 10px; overflow:hidden;white-space : nowrap; width:80%;}
 
+.jump_list_up_down2 li:nth-child(2) a{background-image:url(../images/arraw02-R.svg); background-repeat:no-repeat;background-position:99% center;}
+.jump_list_up_down2 li a:hover{color:#FFF;background-color:#db0277; transition:0.3s;}
+/*上下頁2 ed*/
 /*PC手機版隱藏*/
 .all_display{display:none;}
 .mobile_display{display:none;}
 .pc_display{display:block;}
 /*PC手機版隱藏 ed*/
 @media (max-width: 1024px){
+/*上下頁2*/
+.jump_list_up_down2 li a{margin-right:0px;}
+/*上下頁2 ed*/
 /*PC手機版隱藏*/
 .mobile_display{display:block;}
 .pc_display{display:none;}
