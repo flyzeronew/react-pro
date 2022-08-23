@@ -37,6 +37,8 @@ function Program_detail() {
     const [articles, setArticles] = useState('')
     const [detail, setDetail] = useState('')
     const [menu,setMenu] = useState('')
+    const [prev,setPrev] = useState('')
+    const [next,setNext] = useState('')
     //多組api fetch
     const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords","https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu"];
 
@@ -65,11 +67,27 @@ function Program_detail() {
       setDetail(result1.data[0]);
     };
     // 抓內頁 資料ed
-    
+    // 抓上一頁 資料
+    const urls3 =["https://tvbsapp.tvbs.com.tw/program_api/next_prev_article"];
+    const getDataFromServer3 = async () => {
+      setLoading(true);
+      const [result1] = await Promise.all(
+        urls3.map((url) => fetch(url+"?tbl=6&type=st&id="+get_detail_id).then((res) => res.json()))
+      );
+      const [result2] = await Promise.all(
+        urls3.map((url) => fetch(url+"?tbl=6&type=gt&id="+get_detail_id).then((res) => res.json()))
+      );
+      setLoading(false);
+      setPrev(result1.data[0]);
+      setNext(result2.data[0]);
+    };
+     // 抓上一頁 資料ed
+
     // 模擬componentDidMount
     useEffect(() => {
         getDataFromServer()
         getDataFromServer2()
+        getDataFromServer3()
     }, [])
 
     //fb iframe
@@ -132,9 +150,9 @@ function Program_detail() {
                       <div className="program_content_updown_page_arraw"></div>
                         <div className="program_content_updown_page_context_box">
                           <div className="program_content_updown_page_context ">
-                            <a href="#">
-                              <div className="program_content_updown_page_context-img"><img src={kv_img} alt={img}/></div>
-                              <p className="font18_1">拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓</p>
+                            <a href={prev.id}>
+                              <div className="program_content_updown_page_context-img"><img src={prev.cover_image} alt={img}/></div>
+                              <p className="font18_1">{prev.title}</p>
                             </a>  
                           </div>
                         </div>
@@ -145,9 +163,9 @@ function Program_detail() {
                       <div className="program_content_updown_page_arraw"></div>
                         <div className="program_content_updown_page_context_box">
                           <div className="program_content_updown_page_context ">
-                            <a href="#">
-                              <div className="program_content_updown_page_context-img"><img src={kv_img} alt={img}/></div>
-                              <p className="font18_1">拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓</p>
+                            <a href={next.id}>
+                              <div className="program_content_updown_page_context-img"><img src={next.cover_image} alt={img}/></div>
+                              <p className="font18_1">{next.title}</p>
                             </a>  
                           </div>
                         </div>
@@ -243,8 +261,9 @@ function Program_detail() {
 
                 <div class="jump_list_up_down2 text_center mobile_display">
                   <ul>
-                    <li><a href="#"><p class="float_left">拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓</p></a></li>
-                    <li><a href="#"><p class="float_right text_right">拉筋痛到大叫南韓政府教士兵跳芭蕾舒壓</p></a></li>
+                    <li><a href={prev.id}><p class="float_left">{prev.title}</p></a></li>
+                    <li><a href={next.id}><p class="float_right text_right">{next.title}</p></a></li>
+ 
                   </ul>
                 </div>
 
