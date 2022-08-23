@@ -36,7 +36,7 @@ function Program_detail() {
     const [menu,setMenu] = useState('')
     const [prev,setPrev] = useState('')
     const [next,setNext] = useState('')
-    const [like,setLike] = useState('')
+  
 
     //多組api fetch
     const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords","https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu"];
@@ -290,7 +290,7 @@ function Program_detail() {
               </div>
 
               <div className="height20px"></div>              
-              <Like img={img} get_id={get_id} get_detail_id={get_detail_id}/>
+              <Like img={img} get_id={get_id} get_detail_id={get_detail_id} kw={detail.keyword} />
             </div>
           </div>
 
