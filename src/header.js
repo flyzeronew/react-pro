@@ -15,7 +15,7 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          menu:[],portal_menu:[],child_menu:[],
+          menu:[],portal_menu:[],child_menu:[]
         };
     }
     componentDidMount(){        
@@ -34,13 +34,13 @@ class Header extends React.Component {
             
         }));
 
+       
     }
-
-
 
   render () {
     return (
         <div className="program_header">
+      
             <script async src="https://cse.google.com/cse.js?cx=f59bec45b33cb6c21"></script>
             <div className="google-search">
                 <div className="gcse-search"></div>
@@ -164,7 +164,7 @@ class Header extends React.Component {
                             ? 'Loading menu...'
                             : this.state.menu.map((key, index) => (
                                 index == 0 ?
-                                 <li key={key.id}> <a href={this.props.get_id+'/list'} >{key.title}</a> </li>
+                                 <li key={key.id}> <a href={"/"+this.props.get_id+'/list'} >{key.title}</a> </li>
                                  :<li key={key.id}> <a href={key.url}>{key.title}</a> </li>
                             ))
                         }
