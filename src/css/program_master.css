@@ -77,7 +77,8 @@ p{text-align:left;}
 .program_header_nav ul{}
 .program_header_nav li{display:inline-block;position:relative;}
 .program_header_nav li a{display:block;padding:12px 10px;transition:0.3s;}
-.program_header_nav li a:hover{background-color:#933571;}
+.program_header_nav li a:hover{background-color: #ad3f86;color: #fff;}
+
 /* 按鈕列 ed */
 
 /* 更多子選單 */
@@ -155,9 +156,7 @@ li:hover .mask{
 	width:100%;height:100%;background-color: rgba(0,0,0,0.3);
 	position:absolute;z-index:1;transition: 0.3s;	
 }
-li:hover a{
-	color:#933571;
-}
+
 /* 網頁內容*/
 .program_content_main_information{ margin-bottom:20px;}
 .program_content_main_information_img{
