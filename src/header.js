@@ -6,9 +6,12 @@ import searchbtn from './images/search_btn.svg';
 import ham from './images/ham.svg';
 import ham_close from './images/ham_close.svg';
 import dropdown from './images/dropdown.svg';
+import cover_ad_xx from './images/idle_xx.png';
 import './css/main.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { DFPSlotsProvider, AdSlot } from 'react-dfp';
+import MyAdjs from './MyAdjs';
 
 class Header extends React.Component {
     
@@ -31,27 +34,46 @@ class Header extends React.Component {
         .then(res => res.json())
         .then(json => this.setState({
             portal_menu:json.portal_menu,
-            
         }));
-
+        // 蓋版廣告
+        <DFPSlotsProvider dfpNetworkId={'31610311'}>
+            <AdSlot sizes={[[320, 480]]}  slotId="cover_ad"  adUnit="v4_focus_m_index_splash" />
+        </DFPSlotsProvider>
+        // 蓋版廣告 end
     }
 
 
 
   render () {
     return (
+
         <div className="program_header">
+
+             {/*  蓋版廣告 */}
+             <div class="lightbox_ad" style={{ display: 'none'}}>
+                 <div class="box">
+                    <div class="img">
+                        <div class="xx ad_xx" style={{ display: 'none', zIndex : 1}} ><img src={cover_ad_xx} alt="close lightbox"/></div>
+                            <DFPSlotsProvider dfpNetworkId={'31610311'}>
+                                <AdSlot sizes={[[320, 480]]}  slotId="cover_ad"  adUnit="v4_focus_m_index_splash" />
+                            </DFPSlotsProvider>
+                            <div id="cover_ad"></div>
+                    </div>
+                </div>
+            </div>
+            <MyAdjs />
+             {/*  蓋版廣告 end */}
             <script async src="https://cse.google.com/cse.js?cx=f59bec45b33cb6c21"></script>
             <div className="google-search">
                 <div className="gcse-search"></div>
             </div>
             <div className="main_header">
                 <div className="header_inner">
-                    <h1 className="header_logo"><a href="https://www.tvbs.com.tw/" title="TVBS"><img src={tvbslogo} alt={this.props.logo}/></a></h1>                    
+                    <h1 className="header_logo"><a href="https://www.tvbs.com.tw/" title="TVBS"><img src={tvbslogo} alt={this.props.logo}/></a></h1>
                     <div className="header_search_pc">
                         <input className="search_input" type="search" id="search" placeholder="關鍵字"/>
                         <button class="search_btn" id="search_button"><img src={searchbtn} alt="search_btn" title="search_btn"/></button>
-                        <a class="en_page" href="https://www.tvbs.com.tw/ours/en" target="_new">EN</a>                        
+                        <a class="en_page" href="https://www.tvbs.com.tw/ours/en" target="_new">EN</a>
                     </div>
 
                     <div className="header_search_m">
