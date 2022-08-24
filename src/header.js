@@ -7,6 +7,7 @@ import ham from './images/ham.svg';
 import ham_close from './images/ham_close.svg';
 import dropdown from './images/dropdown.svg';
 import cover_ad_xx from './images/idle_xx.png';
+import cover_ad from './images/ad_360x540.PNG';
 import './css/main.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,7 +44,7 @@ class Header extends React.Component {
 
         <div className="program_header">
              {/*  蓋版廣告 */}
-             <div class="lightbox_ad" style={{ display: 'none'}}>
+             <div  class="lightbox_ad" style={{ display: 'none'}}>
                  <div class="box">
                     <div class="img">
                         <div class="xx ad_xx" style={{ display: 'none', zIndex : 1}} ><img src={cover_ad_xx} alt="close lightbox"/></div>
@@ -51,6 +52,7 @@ class Header extends React.Component {
                                 <AdSlot sizes={[[320, 480]]}  slotId="cover_ad_xx"  adUnit="v4_focus_m_index_splash" />
                             </DFPSlotsProvider>
                             <div id="cover_ad_xx"></div>
+                            {/* <div id="cover_ad_xx"><img src={cover_ad} alt="close lightbox"/></div> */}
                     </div>
                 </div>
             </div>
