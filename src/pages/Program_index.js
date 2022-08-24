@@ -38,7 +38,7 @@ function Program_index() {
 
     const getDataFromServer = async () => {
       setLoading(true);
-      const [result1, result2,result3,result4,result5] = await Promise.all(
+      const [result1, result2,result3,result4,result5,result6] = await Promise.all(
         urls.map((url) => fetch(url+"?id="+ get_id).then((res) => res.json()))
      );
       setLoading(false);
@@ -60,10 +60,6 @@ function Program_index() {
       setArticles(result1.data);
       console.log(articles);
     };
-
-
-
-
     // 模擬componentDidMount
     useEffect(() => {
         getDataFromServer()
