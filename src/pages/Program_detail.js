@@ -15,7 +15,7 @@ import './../css/program_article_share.css';
 import Footer from './../components/Footer.js';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import $ from 'jquery';
-import { FacebookProvider, CommentsCount } from 'react-facebook';
+import { FacebookProvider, Comments } from 'react-facebook';
 
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
@@ -115,7 +115,13 @@ function Program_detail() {
     var clear=stripHTML(content);
     var description_txt=clear.substr(0,100);
     // 正規化取導言 ed
-
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));    
   return (
     <div className="program_container">
 
@@ -306,9 +312,8 @@ function Program_detail() {
 
               <div className="height20px"></div>
               <div className="program_content_right_fb_box">
-              <FacebookProvider appId="690035817779098">
-                <CommentsCount href="https://focus.tvbs.com.tw/review/article/305462" />
-              </FacebookProvider>
+                <div id="fb-root"></div>                
+                <div class="fb-comments" data-href="https://focus.tvbs.com.tw/review/article/305462" data-width="" data-numposts="5"></div>
              </div>
 
             </div>
