@@ -31,9 +31,9 @@ function Program_index() {
     const [program_info, setProgram_info] = useState('')
     const [relative_news, setRelative_news] = useState('')
     const [articles, setArticles] = useState('')
-    
+    const [menu,setMenu] = useState('')
     //多組api fetch
-    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords"];
+    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords","https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu"];
 
     const getDataFromServer = async () => {
       setLoading(true);
@@ -45,7 +45,8 @@ function Program_index() {
       setSocial(result2.data[0]);
       setTime(result3.data[0]);
       setProgram_info(result4.data[0]);
-      setRelative_news(result5.data.slice(0,2))
+      setRelative_news(result5.data.slice(0,2));
+      setMenu(result6.program);
     };
 
     const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list"];
@@ -56,7 +57,6 @@ function Program_index() {
      );
       setLoading(false);
       setArticles(result1.data);
-
       console.log(articles);
     };
 
@@ -90,10 +90,10 @@ function Program_index() {
       <Myjs />
       <Helmet>
           <meta charSet="utf-8" />
-          <title>節目公版</title>
+          <title>{menu.title+" | TVBS 官網"}</title>
           <meta name="viewport" content="width=device-width"/>
-          <meta name="keywords" content="關鍵字" />
-          <meta name="description" content="導言"/>                
+          <meta name="keywords" content={menu.keywords} />
+          <meta name="description" content={menu.description}/>                
        </Helmet> 
       <header>
         <Header img={img} get_id={get_id} logo={logo}/>
