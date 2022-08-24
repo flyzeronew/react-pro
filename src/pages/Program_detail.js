@@ -15,7 +15,7 @@ import './../css/program_article_share.css';
 import Footer from './../components/Footer.js';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import $ from 'jquery';
-import { FacebookProvider, Comments } from 'react-facebook';
+import { FacebookProvider, Page } from 'react-facebook';
 
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
@@ -24,6 +24,7 @@ var get_detail_id=get_pathname[2];
 let img = 'img';
 let ad_img = 'ad_img';
 let logo = 'logo';
+
 
 function Program_detail() {
     const [loading, setLoading] = useState('')
@@ -114,14 +115,8 @@ function Program_detail() {
       }return output;}
     var clear=stripHTML(content);
     var description_txt=clear.substr(0,100);
-    // 正規化取導言 ed
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { return; }
-      js = d.createElement(s); js.id = id;
-      js.src = "https://connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));    
+    // 正規化取導言 ed  
+
   return (
     <div className="program_container">
 
@@ -313,7 +308,7 @@ function Program_detail() {
               <div className="height20px"></div>
               <div className="program_content_right_fb_box">
                 <div id="fb-root"></div>                
-                <div class="fb-comments" data-href="https://focus.tvbs.com.tw/review/article/305462" data-width="" data-numposts="5"></div>
+                <div class="fb-comments" data-href={get_detail_id} data-width="100%" data-numposts="5"></div>
              </div>
 
             </div>

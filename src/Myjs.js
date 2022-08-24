@@ -3,12 +3,28 @@ import $ from 'jquery';
 import queryString from "query-string";
 
 export default class Myjs  extends React.Component {
-    componentDidMount(){
-
+    componentDidMount(){       
     // 大首頁共用
     
     // 漢堡
-    $(document).ready(function(){ 
+    $(document).ready(function(){   
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+       
+          window.fbAsyncInit = function() {     
+            window.FB.init({
+            appId            : '1662762424018052',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v2.9'
+          });
+          window.FB.AppEvents.logPageView();
+          };   
 
         // google搜尋
         var cx = '002254347943719830775:s6buouardhq';
@@ -21,6 +37,10 @@ export default class Myjs  extends React.Component {
         $('#search_button_mobile').click(function(){ 
             $('button.gsc-search-button').click(); 
         }); 
+              
+
+      
+
         $("body").on('keyup','#search',function(){
             if($(this).val()!='') {
                 $('#gsc-i-id1').val( $(this).val() );
@@ -37,6 +57,8 @@ export default class Myjs  extends React.Component {
                 }
             }
         });
+
+        
         $(document).on('keyup',function(event) {
             if(event.keyCode==13) {
                 $('#gsc-i-id1').val('');
