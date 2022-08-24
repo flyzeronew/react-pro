@@ -104,9 +104,18 @@ function Program_detail() {
       $('button.gsc-search-button').click(); 
     }); 
     // 關鍵字轉換及搜尋 ed
+    // 正規化取導言
+    var content=detail.article_content;
+    function stripHTML(input) {
+      var output = '';
+      if(typeof(input)=='string'){
+          var output = input.replace(/(<([^>]+)>)/ig,"");
+      }return output;}
+    var clear=stripHTML(content);
+    var description_txt=clear.substr(0,100);
+    // 正規化取導言 ed
   return (
     <div className="program_container">
-
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
@@ -116,7 +125,7 @@ function Program_detail() {
           <title>{detail.title+" | "+menu.title+" | TVBS 官網"}</title>
           <meta name="viewport" content="width=device-width"/>
           <meta name="keywords" content={detail.keyword}/>
-          <meta name="description" content="導言"/>                
+          <meta name="description" content={description_txt}/>                
        </Helmet> 
       <header>
         <Header img={img} get_id={get_id} logo={logo}/>
