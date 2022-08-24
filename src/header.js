@@ -18,7 +18,7 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          menu:[],portal_menu:[],child_menu:[],
+          menu:[],portal_menu:[],child_menu:[]
         };
     }
     componentDidMount(){        
@@ -35,20 +35,13 @@ class Header extends React.Component {
         .then(json => this.setState({
             portal_menu:json.portal_menu,
         }));
-        // 蓋版廣告
-        <DFPSlotsProvider dfpNetworkId={'31610311'}>
-            <AdSlot sizes={[[320, 480]]}  slotId="cover_ad"  adUnit="v4_focus_m_index_splash" />
-        </DFPSlotsProvider>
-        // 蓋版廣告 end
+
     }
-
-
 
   render () {
     return (
 
         <div className="program_header">
-
              {/*  蓋版廣告 */}
              <div class="lightbox_ad" style={{ display: 'none'}}>
                  <div class="box">
@@ -186,7 +179,7 @@ class Header extends React.Component {
                             ? 'Loading menu...'
                             : this.state.menu.map((key, index) => (
                                 index == 0 ?
-                                 <li key={key.id}> <a href={this.props.get_id+'/list'} >{key.title}</a> </li>
+                                 <li key={key.id}> <a href={"/"+this.props.get_id+'/list'} >{key.title}</a> </li>
                                  :<li key={key.id}> <a href={key.url}>{key.title}</a> </li>
                             ))
                         }

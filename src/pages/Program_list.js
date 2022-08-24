@@ -33,14 +33,15 @@ function Program_list() {
     const [articles, setArticles] = useState('')
     const [pageCount, setPageCount] = useState(0)
     const [offset, setOffset] = useState(0)
-    const [perPage] = useState(10);
+    const [perPage] = useState(10)
+    const [menu,setMenu] = useState('')
     
     //多組api fetch
-    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords"];
+    const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords","https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu"];
 
     const getDataFromServer = async () => {
       setLoading(true);
-      const [result1, result2,result3,result4,result5] = await Promise.all(
+      const [result1, result2,result3,result4,result5,result6] = await Promise.all(
         urls.map((url) => fetch(url+"?id="+ get_id).then((res) => res.json()))
      );
       setLoading(false);
@@ -48,7 +49,8 @@ function Program_list() {
       setSocial(result2.data[0]);
       setTime(result3.data[0]);
       setProgram_info(result4.data[0]);
-      setRelative_news(result5.data.slice(0,2))
+      setRelative_news(result5.data.slice(0,2));
+      setMenu(result6.program);      
     };
 
     const urls2 =["https://tvbsapp.tvbs.com.tw/program_api/wonderful_list","https://tvbsapp.tvbs.com.tw/program_api/wonderful_pages"];
@@ -67,7 +69,7 @@ const handlePageClick = (e) => {
   const selectedPage = e.selected;
   setOffset(selectedPage + 1)
 };
-console.log(handlePageClick);
+
     // 模擬componentDidMount
     useEffect(() => {
         getDataFromServer()
@@ -95,10 +97,9 @@ console.log(handlePageClick);
       <Myjs />
       <Helmet>
           <meta charSet="utf-8" />
-          <title>節目公版</title>
           <meta name="viewport" content="width=device-width"/>
-          <meta name="keywords" content="關鍵字" />
-          <meta name="description" content="導言"/>                
+          <meta name="keywords" content={menu.keywords} />
+          <meta name="description" content={menu.description}/>                
        </Helmet> 
       <header>
         <Header img={img} get_id={get_id} logo={logo}/>
