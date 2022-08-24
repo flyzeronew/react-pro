@@ -48,9 +48,9 @@ class Header extends React.Component {
                     <div class="img">
                         <div class="xx ad_xx" style={{ display: 'none', zIndex : 1}} ><img src={cover_ad_xx} alt="close lightbox"/></div>
                             <DFPSlotsProvider dfpNetworkId={'31610311'}>
-                                <AdSlot sizes={[[320, 480]]}  slotId="cover_ad"  adUnit="v4_focus_m_index_splash" />
+                                <AdSlot sizes={[[320, 480]]}  slotId="cover_ad_xx"  adUnit="v4_focus_m_index_splash" />
                             </DFPSlotsProvider>
-                            <div id="cover_ad"></div>
+                            <div id="cover_ad_xx"></div>
                     </div>
                 </div>
             </div>
