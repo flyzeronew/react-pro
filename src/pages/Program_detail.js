@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import Header from './../header';
 import Like from './../like';
 import {Helmet} from "react-helmet";
@@ -15,6 +15,7 @@ import './../css/program_article_share.css';
 import Footer from './../components/Footer.js';
 import { DFPSlotsProvider, AdSlot } from 'react-dfp';
 import $ from 'jquery';
+import { FacebookProvider, Comments } from 'react-facebook';
 
 var get_pathname=window.location.pathname.split('/').filter(Boolean);
 var get_id=get_pathname[0];
@@ -23,7 +24,7 @@ var get_detail_id=get_pathname[2];
 let img = 'img';
 let ad_img = 'ad_img';
 let logo = 'logo';
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v14.0&appId=690035817779098&autoLogAppEvents=1" nonce="cRUoOw5Z"></script>
+
 function Program_detail() {
     const [loading, setLoading] = useState('')
     const [cover, setCover] = useState('')
@@ -114,8 +115,16 @@ function Program_detail() {
     var clear=stripHTML(content);
     var description_txt=clear.substr(0,100);
     // 正規化取導言 ed
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) { return; }
+      js = d.createElement(s); js.id = id;
+      js.src = "https://connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));    
   return (
     <div className="program_container">
+
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
      </div>
