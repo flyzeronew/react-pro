@@ -23,7 +23,7 @@ var get_detail_id=get_pathname[2];
 let img = 'img';
 let ad_img = 'ad_img';
 let logo = 'logo';
-
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v14.0&appId=690035817779098&autoLogAppEvents=1" nonce="cRUoOw5Z"></script>
 function Program_detail() {
     const [loading, setLoading] = useState('')
     const [cover, setCover] = useState('')
@@ -300,6 +300,13 @@ function Program_detail() {
 
               <div className="height20px"></div>              
               <Like img={img} get_id={get_id} get_detail_id={get_detail_id} kw={detail.keyword} />
+
+              <div className="height20px"></div>
+              <div className="program_content_right_fb_box">
+                <div id="fb-root"></div>                
+                <div class="fb-comments" data-href="https://focus.tvbs.com.tw/review/article/305462" data-width="" data-numposts="5"></div>
+             </div>
+
             </div>
           </div>
 
