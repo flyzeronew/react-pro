@@ -8,6 +8,7 @@ import ham_close from './images/ham_close.svg';
 import dropdown from './images/dropdown.svg';
 import cover_ad_xx from './images/idle_xx.png';
 import cover_ad from './images/ad_360x540.PNG';
+import fix_ad from './images/ad_320x50.png';
 import './css/main.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -43,6 +44,14 @@ class Header extends React.Component {
     return (
 
         <div className="program_header">
+             <DFPSlotsProvider dfpNetworkId={'31610311'}>
+                 <AdSlot sizes={[[320, 480]]}  slotId="fixed_ad"  adUnit="v4_focus_m_index_bottom" />
+             </DFPSlotsProvider>
+            {/* floating banner */}
+            <div class="flexd_bottom_ad" id="fixed_ad"></div> 
+            {/* <div class="flexd_bottom_ad"><img src={fix_ad} alt="close lightbox"/></div>  */}
+            {/* floating banner ed */}
+
              {/*  蓋版廣告 */}
              <div  class="lightbox_ad" style={{ display: 'none'}}>
                  <div class="box">
