@@ -66,6 +66,24 @@ function Program_index() {
         getDataFromServer2()
     }, [])
 
+
+      //banner空值防呆(若資料空則給空)
+     const cover_area= cover?(
+      <>
+       <div className="program_content_main_kv">
+              <li>
+                  <a href={cover.url} target="_blank" rel="noreferrer" >
+                    <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
+                    <div className="img">
+                      <div className="mask"></div>
+                      <img src={cover.cover_image} alt={ad_img}/>
+                    </div>
+                  </a>
+              </li>
+      </div> 
+      </>
+      ):''
+
     //fb iframe
     let fb_url=social.facebook;
     let iframe_fb = '<iframe src="https://www.facebook.com/plugins/page.php?href='+fb_url+'&tabs=timeline&width=328&height=418&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=690035817779098" width="328" height="418" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>'; 
@@ -133,18 +151,9 @@ function Program_index() {
         <div className="height20px"></div>
         <div className="program_content">
           <div className="program_content_main">
-            <div className="program_content_main_kv">
-                    <li>
-                        <a href={cover.url} target="_blank" rel="noreferrer" >
-                          <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
-                          <div className="img">
-                            <div className="mask"></div>
-                            <img src={cover.cover_image} alt={ad_img}/>
-                            {/* <img src={kv_img} alt={ad_img}/> */}
-                          </div>
-                        </a>
-                    </li>
-            </div>
+          {
+            cover_area
+          }
           </div>
           <div className="program_content_right">
 

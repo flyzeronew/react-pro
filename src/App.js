@@ -10,6 +10,10 @@ function App() {
         <Route path="/" element={<Program_index/>} />
         <Route path="/list" element={<Program_list/>} />
         <Route path="/detail/*" element={<Program_detail/>}/>
+         {/* 上班這黨事  */}
+        <Route path="/3" element={<Program_index/>} />
+        <Route path="/3/list" element={<Program_list/>}/>
+        <Route path="/3/detail/*" element={<Program_detail/>}/>
         {/* 少康  */}
         <Route path="/4" element={<Program_index/>} />
         <Route path="/4/list" element={<Program_list/>}/>
