@@ -54,7 +54,7 @@ function Program_index() {
     const getDataFromServer2 = async () => {
       setLoading(true);
       const [result1] = await Promise.all(
-        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=5&page=0").then((res) => res.json()))
+        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=6&page=0").then((res) => res.json()))
      );
       setLoading(false);
       setArticles(result1.data);
@@ -115,40 +115,7 @@ function Program_index() {
         <Header img={img} get_id={get_id} logo={logo}/>
       </header>
       <main>
-        <div className="height20px"></div>
-        <div className="program_ad_box">
-              <DFPSlotsProvider dfpNetworkId={'31610311'} >
-                <AdSlot sizes={[[1,1]]} slotId="div-gpt-ad-1484649371125-101" adUnit="v4_focus_index_incover" />
-                <AdSlot sizes={[[1,1]]} slotId="div-gpt-ad-1484649371125-102"  adUnit="v4_focus_m_index_incover"/>
-                <AdSlot sizes={[[1,1]]} slotId="div-gpt-ad-1484649371125-103" adUnit="v4_focus_m_index_inflip"/>
-                <AdSlot sizes={[[1,1]]} slotId="div-gpt-ad-1484649371125-104"  adUnit="v4_focus_index_inpage"/>
-              </DFPSlotsProvider>
-
-              <div id="div-gpt-ad-1484649371125-101"></div>
-              <div id="div-gpt-ad-1484649371125-102"></div>
-              <div id="div-gpt-ad-1484649371125-103"></div>
-              <div id="div-gpt-ad-1484649371125-104"></div>
-
-            <div className="ad_970x250_pc" id="ad_970x250_pc">
-            <DFPSlotsProvider dfpNetworkId={'31610311'}>
-              <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} slotId="ad_970x250_pc"  adUnit="v4_focus_index_970x90"/>
-              </DFPSlotsProvider> 
-              {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
-              <AdSlot sizes={[[970,250],[1,1]]} />
-              </DFPSlotsProvider>
-              {/* <img src={ad_top} alt={ad_img}/> */}
-            </div>
-            <div className="ad_320x100_mo" id="ad_320x100_mo">
-            <DFPSlotsProvider dfpNetworkId={'31610311'} slotId="ad_320x100_mo" adUnit="v4_focus_m_index_320x100">
-              <AdSlot sizes={[[1,1],[320, 100]]} />
-              </DFPSlotsProvider> 
-              {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
-              <AdSlot sizes={[[320,100],[1,1]]} />
-              </DFPSlotsProvider> */}
-              {/* <img src={ad_top_m} alt={ad_img}/> */}
-            </div>
-        </div>
-        <div className="height20px"></div>
+        <div className="height20px"></div>  
         <div className="program_content">
           <div className="program_content_main">
           {
@@ -191,21 +158,6 @@ function Program_index() {
                   </a>
                     </li>
                     ))}
-
-                <li>
-
-                       <DFPSlotsProvider dfpNetworkId={'31610311'}>
-                        <AdSlot sizes={[[1,1],[300, 250], [300, 600]]}  slotId="list_ad_pc"  adUnit="v4_focus_index_superrec_top" />
-                        <AdSlot sizes={[[1,1],[320, 100], [320, 200], [300, 250]]}  slotId="list_ad_mo"  adUnit="v4_focus_m_index_superrec" />
-                      </DFPSlotsProvider>
-                      <div id="list_ad_pc"></div>
-                      <div id="list_ad_mo"></div>
-
-                      {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
-                        <AdSlot sizes={[[300,250],[1,1]]} />
-                      </DFPSlotsProvider> */}
-
-                </li>
               </div>
           </div>
         </div>

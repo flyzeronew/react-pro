@@ -106,21 +106,7 @@ const handlePageClick = (e) => {
       </header>
       <main>      
         <div className="height20px"></div>
-        <div className="program_ad_box">
-          <div className="ad_970x250_pc">
-                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
-                <AdSlot sizes={[[970,250],[1,1]]} />
-                </DFPSlotsProvider>
-                {/* <img src={ad_top} alt={ad_img}/> */}
-              </div>
-              <div className="ad_320x100_mo">
-                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
-                <AdSlot sizes={[[320,100],[1,1]]} />
-                </DFPSlotsProvider>
-                {/* <img src={ad_top_m} alt={ad_img}/> */}
-              </div>
-          </div>
-        <div className="height20px"></div>
+
         <div className="program_content">
           <div className="program_content_main">
             <div className="program_content_main_information_titel">
@@ -179,24 +165,11 @@ const handlePageClick = (e) => {
           <div className="program_content_right">
 
             <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
-            <div className="program_content_right_ad_box">
-             
-              <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_read_r1">
-              <AdSlot sizes={[[300,250]]} />
-              </DFPSlotsProvider>
-           
-            </div>
+
             <div className="program_content_right_fb_box">
               <Iframe iframe={iframe_fb}/>
             </div>
 
-            <div className="program_content_right_ad_box">
-             
-             <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_read_r2">
-             <AdSlot sizes={[[300,600]]} />
-             </DFPSlotsProvider>
-          
-           </div>
 
           </div>
         </div>

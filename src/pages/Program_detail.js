@@ -136,19 +136,7 @@ function Program_detail() {
       </header>
       <main>      
         <div className="height20px"></div>
-        <div className="program_ad_box">
-            <div className="ad_970x250_pc">
-              <DFPSlotsProvider dfpNetworkId={'21697024903'}  adUnit="news.tvbs.com.tw_pc_index_top">
-              <AdSlot sizes={[[970,250],[1,1]]} />
-              </DFPSlotsProvider>     
-            </div>
-            <div className="ad_320x100_mo">
-              <DFPSlotsProvider dfpNetworkId={'21697024903'}  adUnit="news.tvbs.com.tw_m_index_top">
-              <AdSlot sizes={[[320,100],[1,1]]} />
-              </DFPSlotsProvider> 
-            </div>
-        </div>
-        <div className="height20px"></div>
+
         <div className="program_content">
           <div className="program_content_updown_page_box pc_display">
 
@@ -229,13 +217,6 @@ function Program_detail() {
                   <div dangerouslySetInnerHTML={ {__html:detail.article_content}} />
                 </div>
 
-                <div className="ad_650x100_pc pc_display">
-                  <img src={ad_650x100}  alt={ad_img}/>
-                </div>
-                <div className="ad_300x250_mo">
-                  <img src={ad_300x250}  alt={ad_img}/>
-                </div>
-
                 <div className="height20px"></div>
 
                 <div className="program_content_main_detail_label_box">
@@ -293,15 +274,6 @@ function Program_detail() {
 
               </div>
 
-              <div className="height20px"></div>
-
-              <div className="ad_650x100_pc pc_display">
-                <img src={ad_650x100}  alt={ad_img}/>
-              </div>
-              <div className="ad_300x250_mo">
-                <img src={ad_300x250}  alt={ad_img}/>
-              </div>
-
               <div className="height20px"></div>              
               <Like img={img} get_id={get_id} get_detail_id={get_detail_id} kw={detail.keyword} />
 
@@ -315,11 +287,7 @@ function Program_detail() {
           </div>
 
           <div className="program_content_right">
-              <div className="program_content_right_ad_box">
-                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_read_r1">
-                <AdSlot sizes={[[300,250]]} />
-                </DFPSlotsProvider>
-              </div>
+
 
               <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
 
@@ -327,11 +295,6 @@ function Program_detail() {
                 <Iframe iframe={iframe_fb}/>
               </div>
 
-              <div className="program_content_right_ad_box">             
-                <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_read_r2">
-                <AdSlot sizes={[[300,250]]} />
-                </DFPSlotsProvider>           
-              </div>
           </div>
         </div>
       </main>
