@@ -32,6 +32,7 @@ function Program_index() {
     const [relative_news, setRelative_news] = useState('')
     const [articles, setArticles] = useState('')
     const [menu,setMenu] = useState('')
+
     //多組api fetch
     const urls = ['https://tvbsapp.tvbs.com.tw/program_api/index_cover', "https://tvbsapp.tvbs.com.tw/program_api/social","https://tvbsapp.tvbs.com.tw/program_api/broadcast_time","https://tvbsapp.tvbs.com.tw/program_api/program_info","https://tvbsapp.tvbs.com.tw/program_api/related_news_by_keywords","https://2017tvbsapp-st.tvbs.com.tw/api3/news_program_api/menu"];
 
@@ -53,7 +54,7 @@ function Program_index() {
     const getDataFromServer2 = async () => {
       setLoading(true);
       const [result1] = await Promise.all(
-        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=5&page=0").then((res) => res.json()))
+        urls2.map((url) => fetch(url+"?id="+ get_id +"&limit=6&page=0").then((res) => res.json()))
      );
       setLoading(false);
       setArticles(result1.data);
@@ -64,6 +65,24 @@ function Program_index() {
         getDataFromServer()
         getDataFromServer2()
     }, [])
+
+
+      //banner空值防呆(若資料空則給空)
+     const cover_area= cover?(
+      <>
+       <div className="program_content_main_kv">
+              <li>
+                  <a href={cover.url} target="_blank" rel="noreferrer" >
+                    <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
+                    <div className="img">
+                      <div className="mask"></div>
+                      <img src={cover.cover_image} alt={ad_img}/>
+                    </div>
+                  </a>
+              </li>
+      </div> 
+      </>
+      ):''
 
     //fb iframe
     let fb_url=social.facebook;
@@ -78,7 +97,7 @@ function Program_index() {
 
 
   return (
-    <div className="program_container">   
+    <div className="program_container">
 
      <div id="back">
         <div id="back-img1"><img src={gotop} alt={ad_img}/></div>
@@ -91,59 +110,22 @@ function Program_index() {
           <meta name="keywords" content={menu.keywords} />
           <meta name="description" content={menu.description}/>                
        </Helmet> 
+
       <header>
         <Header img={img} get_id={get_id} logo={logo}/>
       </header>
-      <main>      
-        <div className="height20px"></div>
-        <div className="program_ad_box">
-            <div className="ad_970x250_pc" id="adSlot-0">
-            {/* <Gpt 
-        adUnit="31610311/v4_focus_index_970x90"
-        name="div-gpt-ad-1484649371125-55"
-        size={[[1,1],[970, 90], [970, 250], [728, 90]]}
-    /> */}
-            {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
-            <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90">
-              <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
-              </DFPSlotsProvider> 
-              {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_m_index_top">
-              <AdSlot sizes={[[970,250],[1,1]]} />
-              </DFPSlotsProvider>
-              {/* <img src={ad_top} alt={ad_img}/> */}
-            </div>
-            <div className="ad_320x100_mo">
-            {/* <App /> */}
-            {/* <div id="div-gpt-ad-1484649371125-55"></div> */}
-            {/* <DFPSlotsProvider dfpNetworkId={'31610311'} adUnit="v4_focus_index_970x90"  divid='ad_320x100_mo'>
-              <AdSlot sizes={[[1,1],[970, 90], [970, 250], [728, 90]]} />
-              </DFPSlotsProvider> */}
-              {/* <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_top">
-              <AdSlot sizes={[[320,100],[1,1]]} />
-              </DFPSlotsProvider> */}
-              {/* <img src={ad_top_m} alt={ad_img}/> */}
-            </div>
-        </div>
-        <div className="height20px"></div>
+      <main>
+        <div className="height20px"></div>  
         <div className="program_content">
           <div className="program_content_main">
-            <div className="program_content_main_kv">          
-                    <li>
-                        <a href={cover.url} target="_blank" rel="noreferrer" >
-                          <div className="program_content_main_kv_writing"><p className=" font20_2">{cover.title}</p></div>
-                          <div className="img">
-                            <div className="mask"></div>
-                            <img src={cover.cover_image} alt={ad_img}/>
-                            {/* <img src={kv_img} alt={ad_img}/> */}
-                          </div>
-                        </a>
-                    </li>
-            </div>
+          {
+            cover_area
+          }
           </div>
           <div className="program_content_right">
 
             <div className="program_content_right_time"><p className="font16_3">{time.content}</p></div>
-            
+
             <div className="program_content_right_fb_box">
               <Iframe iframe={iframe_fb}/>
             </div>
@@ -152,7 +134,7 @@ function Program_index() {
         </div>
          <div className="program_content2">
           <div className="program_content2_main2">
-            
+
               <div className="program_content_main_information_titel">
                   <p className="program_content_main_information_titel_p font30_1">精彩內容</p>
                   <div className="program_content_main_information_titel_more">
@@ -160,7 +142,7 @@ function Program_index() {
                   </div>
                   <div className="line01"></div>
               </div>
-              
+
               <div className="height20px"></div>
 
               <div className="program_content_main_information2">
@@ -176,14 +158,6 @@ function Program_index() {
                   </a>
                     </li>
                     ))}
-
-                <li>
-                    
-                      <DFPSlotsProvider dfpNetworkId={'21697024903'} adUnit="news.tvbs.com.tw_pc_index_list1">
-                        <AdSlot sizes={[[300,250],[1,1]]} />
-                      </DFPSlotsProvider>
-                  
-                </li>
               </div>
           </div>
         </div>
@@ -193,7 +167,7 @@ function Program_index() {
                     <div className="program_content_main_information_titel">
                         <p className="program_content_main_information_titel_p font30_1">節目資訊</p>
                         <div className="program_content_main_information_titel_more">
-                            <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                            {/* <div className="more01"><a className="font15_1" href="#">MORE</a></div> */}
                         </div>
                         <div className="line01"></div>
                     </div>
@@ -209,11 +183,11 @@ function Program_index() {
                 </div>
             </div>
 
-            <div className="program_content_right">   
+            <div className="program_content_right">
                 <div className="program_content_main_information_titel">
                   <p className="program_content_main_information_titel_p font30_1">相關新聞</p>
                   <div className="program_content_main_information_titel_more">
-                  <div className="more01"><a className="font15_1" href="#">MORE</a></div>
+                  {/* <div className="more01"><a className="font15_1" href="#">MORE</a></div> */}
                   </div>
                   <div className="line01"></div>
                 </div>
@@ -229,7 +203,6 @@ function Program_index() {
                       <p className="font18_1"><a href={item.share_url}>{item.news_title}</a></p>
                     </li>
                     ))}
- 
                   </ul>
                 </div>
             </div>
